@@ -1,0 +1,2353 @@
+/**
+ * @file
+ * RTL companion for the styles.scss file.
+ */
+/* Import Sass mixins, variables, Compass modules, etc. */
+/* HTML element (SMACSS base) rules */
+/**
+ * @file
+ * Normalize-rtl.scss is the RTL language extension of normalize.scss
+ */
+/**
+ * Lists
+ */
+/* line 9, ../sass/_normalize-rtl.scss */
+dd {
+  margin: 0 30px 0 0;
+}
+
+/* Address paddings set differently in IE 6/7. */
+/* line 16, ../sass/_normalize-rtl.scss */
+menu,
+ol,
+ul {
+  padding: 0 30px 0 0;
+}
+
+/* Layout rules */
+/**
+ * @file
+ * RTL companion for the layout-responsive.css file.
+ */
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+/**
+ * Use 3 grid columns for smaller screens.
+ */
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 85, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+  }
+  /* line 87, ../sass/layouts/_responsive.scss */
+  .sidebar-first #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  /* line 92, ../sass/layouts/_responsive.scss */
+  .sidebar-first .region-sidebar-first {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 100, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 2 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 3rd column from left. */
+  }
+  /* line 102, ../sass/layouts/_responsive.scss */
+  .sidebar-second #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 0%;
+    margin-left: -66.66667%;
+  }
+  /* line 107, ../sass/layouts/_responsive.scss */
+  .sidebar-second .region-sidebar-second {
+    float: right;
+    width: 33.33333%;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  /* line 115, ../sass/layouts/_responsive.scss */
+  .two-sidebars {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Start a new row and span all 3 columns. */
+  }
+  /* line 117, ../sass/layouts/_responsive.scss */
+  .two-sidebars #content {
+    float: right;
+    width: 66.66667%;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  /* line 122, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-first {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+  }
+  /* line 127, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+    clear: right;
+    /* Apply the shared properties of grid items in a single, efficient ruleset. */
+    /* Span 1 column, starting in the 1st column from left. */
+    /* Span 1 column, starting in the 2nd column from left. */
+    /* Span 1 column, starting in the 3rd column from left. */
+  }
+  /* line 133, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 137, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -33.33333%;
+    clear: right;
+  }
+  /* line 142, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 33.33333%;
+    margin-left: -66.66667%;
+  }
+  /* line 146, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n) {
+    float: right;
+    width: 33.33333%;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+}
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (min-width: 960px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 163, ../sass/layouts/_responsive.scss */
+  .sidebar-first {
+    /* Span 4 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+  }
+  /* line 165, ../sass/layouts/_responsive.scss */
+  .sidebar-first #content {
+    float: right;
+    width: 80%;
+    margin-right: 20%;
+    margin-left: -100%;
+  }
+  /* line 170, ../sass/layouts/_responsive.scss */
+  .sidebar-first .region-sidebar-first {
+    float: right;
+    width: 20%;
+    margin-right: 0%;
+    margin-left: -20%;
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 178, ../sass/layouts/_responsive.scss */
+  .sidebar-second {
+    /* Span 4 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */
+  }
+  /* line 180, ../sass/layouts/_responsive.scss */
+  .sidebar-second #content {
+    float: right;
+    width: 80%;
+    margin-right: 0%;
+    margin-left: -80%;
+  }
+  /* line 185, ../sass/layouts/_responsive.scss */
+  .sidebar-second .region-sidebar-second {
+    float: right;
+    width: 20%;
+    margin-right: 80%;
+    margin-left: -100%;
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  /* line 193, ../sass/layouts/_responsive.scss */
+  .two-sidebars {
+    /* Span 3 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */
+  }
+  /* line 195, ../sass/layouts/_responsive.scss */
+  .two-sidebars #content {
+    float: right;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: -80%;
+  }
+  /* line 200, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-first {
+    float: right;
+    width: 20%;
+    margin-right: 0%;
+    margin-left: -20%;
+  }
+  /* line 205, ../sass/layouts/_responsive.scss */
+  .two-sidebars .region-sidebar-second {
+    float: right;
+    width: 20%;
+    margin-right: 80%;
+    margin-left: -100%;
+  }
+}
+/*My CSS*/
+@media all and (min-width: 480px) {
+  /* line 215, ../sass/layouts/_responsive.scss */
+  #header-top {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 217, ../sass/layouts/_responsive.scss */
+  #header-top #block-views-ad-block-block {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  /* line 223, ../sass/layouts/_responsive.scss */
+  #header-top #block-imageblock-3 {
+    float: left;
+    display: inline-block;
+    width: 20%;
+  }
+  /* line 228, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form {
+    float: left;
+    display: inline-block;
+    width: 65%;
+  }
+  /* line 232, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form input#edit-search-block-form--2, #header-top #block-search-form input#edit-search-block-form--4 {
+    width: 80%;
+  }
+  /* line 236, ../sass/layouts/_responsive.scss */
+  #header-top #block-block-3 {
+    float: right;
+  }
+  /* line 239, ../sass/layouts/_responsive.scss */
+  #header-top #block-menu-block-1 {
+    clear: both;
+    float: left;
+  }
+  /* line 243, ../sass/layouts/_responsive.scss */
+  #header-top #block-menu-block-2 {
+    float: right;
+  }
+
+  /* line 249, ../sass/layouts/_responsive.scss */
+  #header #block-search-form {
+    float: right;
+    display: block;
+    width: 55%;
+    margin-bottom: 10px;
+  }
+  /* line 254, ../sass/layouts/_responsive.scss */
+  #header #block-search-form input#edit-search-block-form--2, #header #block-search-form input#edit-search-block-form--4 {
+    width: 80%;
+  }
+  /* line 258, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-5 {
+    float: right;
+  }
+  /* line 261, ../sass/layouts/_responsive.scss */
+  #header #block-superfish-1 {
+    display: none;
+  }
+  /* line 264, ../sass/layouts/_responsive.scss */
+  #header a#logo {
+    display: none;
+  }
+  /* line 267, ../sass/layouts/_responsive.scss */
+  #header #block-block-4, #header #block-block-5 {
+    float: right;
+  }
+
+  /* line 272, ../sass/layouts/_responsive.scss */
+  #content {
+    /*DECOR page*/
+    /*DECOR page*/
+    /*WEDDING Page*/
+    /*WEDDING Page*/
+    /*accessories Page*/
+    /*accessories Page*/
+    /*ELLE GIRL*/
+    /*ELLE GIRL*/
+    /*頻道頁面*/
+    /*頻道頁面*/
+    /*node content area*/
+    /*node content area*/
+    /** ELLE TV **/
+    /*ELLE TV*/
+    /** column area **/
+    /** column area **/
+    /** EVENT AREA **/
+    /** EVENT AREA **/
+    /** User Login Register Area  **/
+    /** User Login Register Area  **/
+    /** Weform Area **/
+    /** Weform Area **/
+    /** 網站地圖 **/
+    /** 網站地圖 **/
+  }
+  /* line 276, ../sass/layouts/_responsive.scss */
+  #content .region-highlighted #block-views-elle-slideshow-block-5 {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 282, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 285, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block ul li:first-child {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 289, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block ul li:nth-child(2) {
+    clear: both;
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    float: left;
+  }
+  /* line 296, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block ul li:nth-child(3) {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    float: left;
+  }
+  /* line 305, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-1 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 309, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-2, #content #block-views-ad-block-block-3 {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    margin: 20px 0px;
+  }
+  /* line 314, ../sass/layouts/_responsive.scss */
+  #content #block-nodeblock-49, #content #block-nodeblock-55 {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 318, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-hot-news-block {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 323, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-hot-news-block li.news-block .views-field-field-image {
+    float: left;
+    width: 60%;
+    margin-left: 0%;
+    margin-right: -60%;
+  }
+  /* line 326, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-hot-news-block li.news-block .views-field-sharethis {
+    float: right;
+    width: 30%;
+    margin-right: 5%;
+    margin-left: -35%;
+  }
+  /* line 329, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-hot-news-block li.news-block .views-field-title {
+    clear: right;
+    float: right;
+    width: 30%;
+    margin-right: 5%;
+    margin-left: -35%;
+  }
+  /* line 333, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-hot-news-block li.news-block .views-field-body {
+    clear: right;
+    float: right;
+    width: 30%;
+    margin-right: 5%;
+    margin-left: -35%;
+  }
+  /* line 339, ../sass/layouts/_responsive.scss */
+  #content #extra-social {
+    display: none !important;
+  }
+  /* line 342, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 347, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block li.shopping-block:nth-child(1) {
+    float: right;
+    width: 19.2%;
+    margin-right: 0%;
+    margin-left: -19.2%;
+  }
+  /* line 350, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block li.shopping-block:nth-child(2) {
+    float: right;
+    width: 19.2%;
+    margin-right: 20.2%;
+    margin-left: -39.4%;
+  }
+  /* line 353, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block li.shopping-block:nth-child(3) {
+    float: right;
+    width: 19.2%;
+    margin-right: 40.4%;
+    margin-left: -59.6%;
+  }
+  /* line 356, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block li.shopping-block:nth-child(4) {
+    float: right;
+    width: 19.2%;
+    margin-right: 60.6%;
+    margin-left: -79.8%;
+  }
+  /* line 359, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-shopping-block li.shopping-block:nth-child(5) {
+    float: right;
+    width: 19.2%;
+    margin-right: 80.8%;
+    margin-left: -100%;
+  }
+  /* line 364, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 367, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram ul.instagram-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 376, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram ul.instagram-list li.instagram-block {
+    float: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* line 381, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram ul.instagram-list li.instagram-block:nth-child(1) {
+    float: right;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: -30%;
+  }
+  /* line 384, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram ul.instagram-list li.instagram-block:nth-child(2) {
+    float: right;
+    width: 30%;
+    margin-right: 35%;
+    margin-left: -65%;
+  }
+  /* line 387, ../sass/layouts/_responsive.scss */
+  #content #block-hellosanta-elle-instagram ul.instagram-list li.instagram-block:nth-child(3) {
+    float: right;
+    width: 30%;
+    margin-right: 70%;
+    margin-left: -100%;
+  }
+  /* line 393, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 396, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block ul.editor-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 405, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block ul.editor-list li.editor-block {
+    float: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* line 410, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block ul.editor-list li.editor-block:nth-child(1) {
+    float: right;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: -30%;
+  }
+  /* line 413, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block ul.editor-list li.editor-block:nth-child(2) {
+    float: right;
+    width: 30%;
+    margin-right: 35%;
+    margin-left: -65%;
+  }
+  /* line 416, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block ul.editor-list li.editor-block:nth-child(3) {
+    float: right;
+    width: 30%;
+    margin-right: 70%;
+    margin-left: -100%;
+  }
+  /* line 424, ../sass/layouts/_responsive.scss */
+  #content .decor-area {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 429, ../sass/layouts/_responsive.scss */
+  #content .decor-area ul.decor-list li.decor-block .views-field-field-image {
+    width: 53.84615%;
+    margin-right: 10px;
+  }
+  /* line 438, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-4 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 441, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 445, ../sass/layouts/_responsive.scss */
+  #content #block-nodeblock-62, #content #block-nodeblock-63 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 449, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-5, #content #block-views-ad-block-block-6 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 453, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-7 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 462, ../sass/layouts/_responsive.scss */
+  #content .wedding-area {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 465, ../sass/layouts/_responsive.scss */
+  #content .wedding-area ul.wedding-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 472, ../sass/layouts/_responsive.scss */
+  #content .wedding-area ul.wedding-list li.wedding-block {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    float: left;
+    overflow: hidden;
+    width: 46.15385%;
+    margin-right: 6.92308%;
+  }
+  /* line 480, ../sass/layouts/_responsive.scss */
+  #content .wedding-area ul.wedding-list li.wedding-block:nth-child(2n) {
+    margin-right: 0px;
+  }
+  /* line 487, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-12 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 490, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-1 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 494, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-13, #content #block-views-ad-block-block-14 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 498, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-15 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 507, ../sass/layouts/_responsive.scss */
+  #content .accessories-area {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 510, ../sass/layouts/_responsive.scss */
+  #content .accessories-area ul.accessories-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  /* line 517, ../sass/layouts/_responsive.scss */
+  #content .accessories-area ul.accessories-list li.accessories-block {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    float: left;
+    overflow: hidden;
+    width: 46.15385%;
+    margin-right: 6.92308%;
+  }
+  /* line 525, ../sass/layouts/_responsive.scss */
+  #content .accessories-area ul.accessories-list li.accessories-block:nth-child(2n) {
+    margin-right: 0px;
+  }
+  /* line 532, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-16 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 535, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-2 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 539, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-17, #content #block-views-ad-block-block-18 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 543, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-19 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 551, ../sass/layouts/_responsive.scss */
+  #content .girl-area {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 556, ../sass/layouts/_responsive.scss */
+  #content .girl-area ul.girl-list li.girl-block .views-field-field-image {
+    float: right;
+    width: 46.15385%;
+    margin-right: 0%;
+    margin-left: -46.15385%;
+  }
+  /* line 559, ../sass/layouts/_responsive.scss */
+  #content .girl-area ul.girl-list li.girl-block .views-field-sharethis {
+    float: left;
+    width: 46.15385%;
+    margin-left: 0%;
+    margin-right: -46.15385%;
+  }
+  /* line 562, ../sass/layouts/_responsive.scss */
+  #content .girl-area ul.girl-list li.girl-block .views-field-title {
+    clear: left;
+    float: left;
+    width: 46.15385%;
+    margin-left: 0%;
+    margin-right: -46.15385%;
+  }
+  /* line 566, ../sass/layouts/_responsive.scss */
+  #content .girl-area ul.girl-list li.girl-block .views-field-body, #content .girl-area ul.girl-list li.girl-block .views-field-nid {
+    clear: left;
+    float: left;
+    width: 46.15385%;
+    margin-left: 0%;
+    margin-right: -46.15385%;
+  }
+  /* line 574, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-8 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 577, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-3 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 581, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-9, #content #block-views-ad-block-block-10 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 585, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-11 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 595, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-4 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 598, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-folder-banner-block-1 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 603, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-folder-banner-block-2, #content #block-views-ad-folder-banner-block-3 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 607, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-folder-banner-block-4 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    text-align: center;
+  }
+  /* line 617, ../sass/layouts/_responsive.scss */
+  #content .node-article-area, #content .search-results.node-results {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 622, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-article-block-block {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 626, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-5 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 631, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-article-block-block-1 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 636, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-article-block-block-2 {
+    clear: right;
+    float: right;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: -30%;
+  }
+  /* line 641, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-article-block-block-3 {
+    float: right;
+    width: 30%;
+    margin-right: 35%;
+    margin-left: -65%;
+  }
+  /* line 651, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 655, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 ul li.views-row-1 {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+  }
+  /* line 658, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 ul li.views-row-2 {
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 661, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 ul li.views-row-2 .field-name-field-cover-image {
+    float: left;
+    width: 44.44444%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 668, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 ul li.views-row-3, #content #block-views-elle-tv-block-1 ul li.views-row-4 {
+    clear: left;
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 672, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-1 ul li.views-row-3 .field-name-field-cover-image, #content #block-views-elle-tv-block-1 ul li.views-row-4 .field-name-field-cover-image {
+    float: left;
+    width: 44.44444%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 683, ../sass/layouts/_responsive.scss */
+  #content .elletv {
+    clear: both;
+  }
+  /* line 686, ../sass/layouts/_responsive.scss */
+  #content .elletv li.elletv-block:nth-child(3n+1) {
+    clear: right;
+    float: right;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: -30%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 691, ../sass/layouts/_responsive.scss */
+  #content .elletv li.elletv-block:nth-child(3n+2) {
+    float: right;
+    width: 30%;
+    margin-right: 35%;
+    margin-left: -65%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 695, ../sass/layouts/_responsive.scss */
+  #content .elletv li.elletv-block:nth-child(3n) {
+    float: right;
+    width: 30%;
+    margin-right: 70%;
+    margin-left: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 702, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-2 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 706, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-2 li.elletv-block:nth-child(3n+1) {
+    clear: right;
+    float: right;
+    width: 30%;
+    margin-right: 0%;
+    margin-left: -30%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 711, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-2 li.elletv-block:nth-child(3n+2) {
+    float: right;
+    width: 30%;
+    margin-right: 35%;
+    margin-left: -65%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 715, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block-2 li.elletv-block:nth-child(3n) {
+    float: right;
+    width: 30%;
+    margin-right: 70%;
+    margin-left: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 722, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-20 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 728, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-6, #content #block-views-ad-block-block-21 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 736, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-2 {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 740, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-2 ul.editor-list li.editor-block {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 742, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(1) {
+    float: right;
+    width: 53.84615%;
+    margin-right: 0%;
+    margin-left: -53.84615%;
+  }
+  /* line 745, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) {
+    float: left;
+    width: 38.46154%;
+    margin-left: 0%;
+    margin-right: -38.46154%;
+  }
+  /* line 748, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) {
+    clear: left;
+    float: left;
+    width: 38.46154%;
+    margin-left: 0%;
+    margin-right: -38.46154%;
+  }
+  /* line 756, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-3 {
+    clear: right;
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 761, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 763, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(1) {
+    float: right;
+    width: 53.84615%;
+    margin-right: 0%;
+    margin-left: -53.84615%;
+  }
+  /* line 766, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) {
+    float: left;
+    width: 38.46154%;
+    margin-left: 0%;
+    margin-right: -38.46154%;
+  }
+  /* line 769, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) {
+    clear: left;
+    float: left;
+    width: 38.46154%;
+    margin-left: 0%;
+    margin-right: -38.46154%;
+  }
+  /* line 777, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-8 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 784, ../sass/layouts/_responsive.scss */
+  #content .column-area ul.editor-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 793, ../sass/layouts/_responsive.scss */
+  #content .column-area ul.editor-list li.editor-block {
+    float: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  /* line 801, ../sass/layouts/_responsive.scss */
+  #content .column-area ul.editor-list li.editor-block .list-wrapper {
+    padding-left: 150px !important;
+    position: relative;
+  }
+  /* line 804, ../sass/layouts/_responsive.scss */
+  #content .column-area ul.editor-list li.editor-block .list-wrapper .views-field-field-avatar {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    margin-top: -50px;
+  }
+  /* line 815, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-23 {
+    clear: both;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 822, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-1 ul.editor-list li.editor-block {
+    width: 100%;
+  }
+  /* line 824, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-1 ul.editor-list li.editor-block .list-wrapper {
+    padding-left: 20% !important;
+    padding-right: 10% !important;
+    position: relative;
+  }
+  /* line 828, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-editor-block-1 ul.editor-list li.editor-block .list-wrapper .views-field-field-avatar {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    margin-top: -50px;
+  }
+  /* line 841, ../sass/layouts/_responsive.scss */
+  #content ul.columnist-list li.columnist-article .list-wrapper {
+    padding-bottom: 20px;
+    padding-left: 150px;
+    margin-top: 20px;
+    padding-right: 10px;
+    position: relative;
+  }
+  /* line 847, ../sass/layouts/_responsive.scss */
+  #content ul.columnist-list li.columnist-article .list-wrapper .views-field-field-image {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
+  /* line 857, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-24 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 860, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-25 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 870, ../sass/layouts/_responsive.scss */
+  #content .event-area ul.event-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 879, ../sass/layouts/_responsive.scss */
+  #content .event-area ul.event-list li.event-block {
+    float: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 20%;
+    margin-bottom: 20px;
+    margin-right: 15%;
+  }
+  /* line 888, ../sass/layouts/_responsive.scss */
+  #content .event-area ul.event-list li.event-block:nth-child(3n+1) {
+    margin-left: 5%;
+  }
+  /* line 891, ../sass/layouts/_responsive.scss */
+  #content .event-area ul.event-list li.event-block:nth-child(3n) {
+    margin-right: 5%;
+  }
+  /* line 898, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-27 {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 902, ../sass/layouts/_responsive.scss */
+  #content #block-views-nodequeue-1-block-7 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 907, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-28 {
+    clear: left;
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+  }
+  /* line 916, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-special-block-6 {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 920, ../sass/layouts/_responsive.scss */
+  #content form#user-login, #content form#user-register-form {
+    float: left;
+    width: 30%;
+    margin-left: 0%;
+    margin-right: -30%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 929, ../sass/layouts/_responsive.scss */
+  #content .node-webform {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 934, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 938, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-addr {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+  }
+  /* line 941, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-name {
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 944, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-eng-name {
+    clear: left;
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 948, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-addr-1, #content .node-webform .view-eva-company-info .views-field-field-company-eng-addr {
+    clear: left;
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 952, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-phone {
+    clear: left;
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 956, ../sass/layouts/_responsive.scss */
+  #content .node-webform .view-eva-company-info .views-field-field-company-fax {
+    clear: left;
+    float: left;
+    width: 45%;
+    margin-left: 0%;
+    margin-right: -45%;
+  }
+  /* line 961, ../sass/layouts/_responsive.scss */
+  #content .node-webform .field-name-webform-title {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    margin-top: 30px;
+  }
+  /* line 966, ../sass/layouts/_responsive.scss */
+  #content .node-webform .webform-client-form {
+    clear: right;
+    float: right;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: -95%;
+  }
+  /* line 969, ../sass/layouts/_responsive.scss */
+  #content .node-webform .webform-client-form .webform-component--username {
+    display: block;
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+  }
+  /* line 975, ../sass/layouts/_responsive.scss */
+  #content .node-webform .webform-client-form .webform-component-email {
+    display: block;
+    width: 30%;
+    float: left;
+  }
+  /* line 980, ../sass/layouts/_responsive.scss */
+  #content .node-webform .webform-client-form .webform-component--title {
+    display: block;
+    width: 30%;
+    float: right;
+  }
+  /* line 994, ../sass/layouts/_responsive.scss */
+  #content #block-menu-block-6 ul.menu li:nth-child(3n+1) {
+    clear: both;
+    float: right;
+    width: 25%;
+    margin-right: 0%;
+    margin-left: -25%;
+  }
+  /* line 998, ../sass/layouts/_responsive.scss */
+  #content #block-menu-block-6 ul.menu li:nth-child(3n+2) {
+    float: right;
+    width: 25%;
+    margin-right: 37.5%;
+    margin-left: -62.5%;
+  }
+  /* line 1001, ../sass/layouts/_responsive.scss */
+  #content #block-menu-block-6 ul.menu li:nth-child(3n) {
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+  }
+
+  /* line 1019, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 li#global-website ul.menu li {
+    width: 12%;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 999px) {
+  /* line 1030, ../sass/layouts/_responsive.scss */
+  #main {
+    padding-top: 0px !important;
+  }
+
+  /* line 1034, ../sass/layouts/_responsive.scss */
+  #content #block-views-ad-block-block-1 {
+    display: none;
+  }
+  /* line 1036, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1038, ../sass/layouts/_responsive.scss */
+  #content #block-views-elle-tv-block img {
+    width: 100%;
+  }
+}
+@media all and (min-width: 1000px) {
+  /* line 1047, ../sass/layouts/_responsive.scss */
+  body.elle-girl #header-top {
+    display: none;
+  }
+  /* line 1048, ../sass/layouts/_responsive.scss */
+  body.elle-girl #header {
+    padding-top: 0px;
+  }
+  /* line 1050, ../sass/layouts/_responsive.scss */
+  body.elle-girl #header .extend-header {
+    display: block !important;
+    background: #000;
+    padding-left: -3000px;
+    margin-left: -3000px;
+    padding-right: -3000px;
+    margin-right: -3000px;
+    width: auto !important;
+  }
+
+  /* line 1063, ../sass/layouts/_responsive.scss */
+  #header-top #block-views-ad-block-block {
+    float: left;
+    display: block;
+    width: 49%;
+  }
+  /* line 1068, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form {
+    float: right;
+    display: block;
+    width: 49%;
+  }
+  /* line 1072, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form input#edit-search-block-form--2, #header-top #block-search-form input#edit-search-block-form--4 {
+    width: 80%;
+  }
+  /* line 1076, ../sass/layouts/_responsive.scss */
+  #header-top #block-menu-block-1 {
+    display: inline-block;
+    clear: both;
+    float: left;
+  }
+  /* line 1081, ../sass/layouts/_responsive.scss */
+  #header-top #block-menu-block-2 {
+    float: right;
+    display: inline-block;
+  }
+  /* line 1086, ../sass/layouts/_responsive.scss */
+  #header-top #block-block-3, #header-top #block-imageblock-3 {
+    display: none;
+  }
+
+  /* line 1091, ../sass/layouts/_responsive.scss */
+  #header #block-superfish-1 {
+    display: block;
+  }
+  /* line 1092, ../sass/layouts/_responsive.scss */
+  #header a#logo {
+    display: inline-block;
+    float: none;
+    max-width: 192px;
+  }
+  /* line 1097, ../sass/layouts/_responsive.scss */
+  #header #block-block-4, #header #block-block-5 {
+    display: none;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px) {
+  /* line 1108, ../sass/layouts/_responsive.scss */
+  body.page-node #header {
+    display: none;
+  }
+
+  /* line 1113, ../sass/layouts/_responsive.scss */
+  #header #block-search-form {
+    float: left !important;
+    display: inline-block !important;
+    width: 55%;
+    margin-bottom: 10px;
+  }
+  /* line 1118, ../sass/layouts/_responsive.scss */
+  #header #block-search-form input#edit-search-block-form--2 {
+    width: 80%;
+  }
+  /* line 1121, ../sass/layouts/_responsive.scss */
+  #header #block-search-form input#edit-search-block-form--4 {
+    width: 70%;
+  }
+  /* line 1126, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-5 {
+    text-align: left !important;
+    float: none !important;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  /* line 1140, ../sass/layouts/_responsive.scss */
+  body.page-node #header {
+    display: none;
+  }
+
+  /* line 1146, ../sass/layouts/_responsive.scss */
+  #header #block-search-form {
+    float: left !important;
+    display: inline-block !important;
+    width: 70% !important;
+  }
+  /* line 1151, ../sass/layouts/_responsive.scss */
+  #header #block-search-form .form-item input#edit-search-block-form--2 {
+    width: 77%;
+  }
+  /* line 1154, ../sass/layouts/_responsive.scss */
+  #header #block-search-form .form-item input#edit-search-block-form--4 {
+    width: 70%;
+  }
+  /* line 1159, ../sass/layouts/_responsive.scss */
+  #header #block-block-4, #header #block-block-5 {
+    float: right;
+  }
+  /* line 1162, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-5 {
+    text-align: left !important;
+  }
+
+  /* line 1167, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form {
+    width: 70% !important;
+  }
+  /* line 1170, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form .form-item input#edit-search-block-form--2, #header-top #block-search-form .form-item input#edit-search-block-form--4 {
+    width: 77%;
+  }
+
+  /* line 1178, ../sass/layouts/_responsive.scss */
+  #main #content {
+    /** Weform Area **/
+    /** Weform Area **/
+    /** 網站地圖 **/
+    /** 網站地圖 **/
+  }
+  /* line 1179, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 1184, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block li.news-block .views-field-field-image {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1186, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block li.news-block .views-field-field-image img {
+    width: 100%;
+  }
+  /* line 1190, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block li.news-block .views-field-sharethis {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1195, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block li.news-block .views-field-title {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1200, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-hot-news-block li.news-block .views-field-body {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1210, ../sass/layouts/_responsive.scss */
+  #main #content .column-area ul.editor-list li.editor-block {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    width: 100%;
+  }
+  /* line 1216, ../sass/layouts/_responsive.scss */
+  #main #content .girl-area {
+    float: right;
+    width: 65%;
+    margin-right: 0%;
+    margin-left: -65%;
+  }
+  /* line 1221, ../sass/layouts/_responsive.scss */
+  #main #content .girl-area ul.girl-list li.girl-block .views-field-field-image {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1224, ../sass/layouts/_responsive.scss */
+  #main #content .girl-area ul.girl-list li.girl-block .views-field-sharethis {
+    clear: right;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  /* line 1228, ../sass/layouts/_responsive.scss */
+  #main #content .girl-area ul.girl-list li.girl-block .views-field-title {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  /* line 1232, ../sass/layouts/_responsive.scss */
+  #main #content .girl-area ul.girl-list li.girl-block .views-field-body, #main #content .girl-area ul.girl-list li.girl-block .views-field-nid {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  /* line 1241, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block {
+    padding-top: 0px;
+    width: 71.53846%;
+    margin-right: 7.69231%;
+  }
+  /* line 1245, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block:nth-child(2n) {
+    margin-right: 0px;
+  }
+  /* line 1248, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block .views-field-field-image {
+    padding: 0px;
+    width: 100%;
+  }
+  /* line 1251, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block .views-field-field-image img {
+    width: 100%;
+  }
+  /* line 1261, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* line 1266, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1270, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-addr {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1273, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-name {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1277, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-eng-name {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1281, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-addr-1, #main #content .node-webform .view-eva-company-info .views-field-field-company-eng-addr {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1285, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-phone {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1289, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-fax {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1294, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .field-name-webform-title {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+    margin-top: 30px;
+  }
+  /* line 1299, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form {
+    clear: right;
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  /* line 1302, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component--username {
+    display: block;
+    width: 47.5%;
+    margin-right: 5%;
+    float: left;
+    margin-bottom: 0px;
+  }
+  /* line 1309, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component-email {
+    display: block;
+    width: 47.5%;
+    float: left;
+    margin-bottom: 0px;
+  }
+  /* line 1315, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component--title {
+    clear: both;
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  /* line 1329, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 ul.menu li:nth-child(2n+1) {
+    clear: both;
+    float: right;
+    width: 42.5%;
+    margin-right: 5%;
+    margin-left: -47.5%;
+  }
+  /* line 1333, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 ul.menu li:nth-child(2n) {
+    clear: none;
+    float: right;
+    width: 42.5%;
+    margin-right: 52.5%;
+    margin-left: -95%;
+  }
+  /* line 1337, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 ul.menu li ul.menu li {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* line 1357, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 li#global-website ul.menu li {
+    width: 18%;
+  }
+}
+@media all and (max-width: 479px) {
+  /* line 1367, ../sass/layouts/_responsive.scss */
+  body.page-node #header {
+    display: none;
+  }
+
+  /* line 1373, ../sass/layouts/_responsive.scss */
+  body.front #header #logo {
+    display: none;
+  }
+  /* line 1374, ../sass/layouts/_responsive.scss */
+  body.front #header #block-superfish-1 {
+    display: none;
+  }
+
+  /* line 1381, ../sass/layouts/_responsive.scss */
+  #header-top #block-imageblock-3 .block-image img {
+    width: 50%;
+  }
+  /* line 1385, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form {
+    width: 100%;
+  }
+  /* line 1388, ../sass/layouts/_responsive.scss */
+  #header-top #block-search-form .form-item input#edit-search-block-form--2, #header-top #block-search-form .form-item input#edit-search-block-form--4 {
+    width: 70%;
+  }
+  /* line 1394, ../sass/layouts/_responsive.scss */
+  #header-top #block-views-ad-block-block {
+    display: none;
+  }
+  /* line 1397, ../sass/layouts/_responsive.scss */
+  #header-top #block-block-3 {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    width: 40px;
+    height: 45px;
+  }
+  /* line 1404, ../sass/layouts/_responsive.scss */
+  #header-top #block-menu-block-2, #header-top #block-menu-block-1 {
+    display: none;
+  }
+
+  /* line 1409, ../sass/layouts/_responsive.scss */
+  #header #block-search-form {
+    text-align: left !important;
+    float: left !important;
+    display: inline-block !important;
+    width: 80% !important;
+  }
+  /* line 1415, ../sass/layouts/_responsive.scss */
+  #header #block-search-form .form-item input#edit-search-block-form--2 {
+    width: 70%;
+  }
+  /* line 1420, ../sass/layouts/_responsive.scss */
+  #header #block-block-4, #header #block-block-5 {
+    float: right;
+  }
+  /* line 1423, ../sass/layouts/_responsive.scss */
+  #header #block-menu-block-5 {
+    clear: both;
+    text-align: left !important;
+    margin-bottom: 5px !important;
+  }
+  /* line 1428, ../sass/layouts/_responsive.scss */
+  #header #block-superfish-1 {
+    display: none;
+  }
+
+  /* line 1433, ../sass/layouts/_responsive.scss */
+  #main #content {
+    /** Weform Area **/
+    /** Weform Area **/
+    /** 網站地圖 **/
+    /** 網站地圖 **/
+  }
+  /* line 1435, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-slideshow-block ul.flex-direction-nav {
+    display: none;
+  }
+  /* line 1438, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-nodequeue-1-block-4 {
+    display: none;
+  }
+  /* line 1445, ../sass/layouts/_responsive.scss */
+  #main #content .accessories-area ul.accessories-list li.accessories-block .views-field-field-image img {
+    width: 100%;
+  }
+  /* line 1453, ../sass/layouts/_responsive.scss */
+  #main #content .column-area ul.editor-list li.editor-block {
+    margin-bottom: 20px;
+  }
+  /* line 1460, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block {
+    padding-top: 0px;
+  }
+  /* line 1462, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block .views-field-field-image {
+    padding: 0px;
+    width: 100%;
+  }
+  /* line 1465, ../sass/layouts/_responsive.scss */
+  #main #content .wedding-area ul.wedding-list li.wedding-block .views-field-field-image img {
+    width: 100%;
+  }
+  /* line 1471, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-shopping-block .view-elle-shopping {
+    text-align: center;
+  }
+  /* line 1476, ../sass/layouts/_responsive.scss */
+  #main #content #block-hellosanta-elle-instagram li.instagram-block {
+    margin-bottom: 20px;
+  }
+  /* line 1481, ../sass/layouts/_responsive.scss */
+  #main #content #block-views-elle-editor-block li.views-row {
+    margin-bottom: 20px;
+  }
+  /* line 1502, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform {
+    display: block;
+    width: 100%;
+  }
+  /* line 1506, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1510, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-addr {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1514, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-name {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1518, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-eng-name {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1522, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-addr-1, #main #content .node-webform .view-eva-company-info .views-field-field-company-eng-addr {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1526, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-phone {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1530, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .view-eva-company-info .views-field-field-company-fax {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1535, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .field-name-webform-title {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1539, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1542, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component--username {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1546, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component-email {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1550, ../sass/layouts/_responsive.scss */
+  #main #content .node-webform .webform-client-form .webform-component--title {
+    display: inline-block;
+    width: 100%;
+  }
+  /* line 1559, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 1562, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 ul.menu li {
+    display: inline-block;
+    width: 90%;
+    padding: 0px 5%;
+  }
+  /* line 1566, ../sass/layouts/_responsive.scss */
+  #main #content #block-menu-block-6 ul.menu li ul.menu li {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* line 1583, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded {
+    text-align: center !important;
+    width: 100%;
+  }
+  /* line 1586, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded span.nolink {
+    width: auto !important;
+    border-bottom: 1px solid #828282;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-right: 0px !important;
+    display: inline-block !important;
+  }
+  /* line 1594, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded span.nolink:after {
+    display: none !important;
+  }
+  /* line 1598, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded li.menu-mlid-710 {
+    width: auto;
+  }
+  /* line 1600, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded li.menu-mlid-710 span.nolink {
+    display: inline-block;
+    list-style-image: none;
+    list-style-type: none;
+    margin-right: 20px;
+    position: relative;
+    bottom: -5px;
+    border-bottom: 0px;
+  }
+  /* line 1610, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 ul.menu li.is-expanded ul.menu {
+    display: block !important;
+    text-align: center;
+    border: 0px !important;
+  }
+  /* line 1618, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 li#global-website {
+    display: none;
+    margin-bottom: 20px;
+  }
+  /* line 1621, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 li#global-website ul.menu {
+    margin-left: 0px !important;
+    text-align: left;
+    padding: 0px 5%;
+    border-left: 0px !important;
+  }
+  /* line 1626, ../sass/layouts/_responsive.scss */
+  .region-bottom #block-menu-block-4 li#global-website ul.menu li {
+    display: inline-block;
+    width: 18%;
+    text-align: left;
+  }
+}
+/* Component (SMACSS module) rules */
+/**
+ * @file
+ * RTL companion for the modular-styles.css file.
+ */
+/**
+ * Branding header.
+ */
+/* Wrapping link for logo. */
+/* line 11, ../sass/components/_misc-rtl.scss */
+.header__logo {
+  float: right;
+}
+
+/* The secondary menu (login, etc.) */
+/* line 16, ../sass/components/_misc-rtl.scss */
+.header__secondary-menu {
+  float: left;
+}
+
+/**
+ * Navigation bar.
+ */
+/* Main menu and secondary menu links and menu block links. */
+/* line 27, ../sass/components/_misc-rtl.scss */
+#navigation .links,
+#navigation .menu {
+  text-align: right;
+}
+/* line 30, ../sass/components/_misc-rtl.scss */
+#navigation .links li,
+#navigation .menu li {
+  /* A simple method to get navigation links to appear in one line. */
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+/**
+ * Messages.
+ */
+/* line 41, ../sass/components/_misc-rtl.scss */
+.messages, .messages--status, .messages--warning, .messages--error {
+  padding: 10px 50px 10px 10px;
+  background-position: 99% 8px;
+}
+
+/**
+ * Tabs.
+ */
+/* line 58, ../sass/components/_misc-rtl.scss */
+.tabs-primary__tab, .tabs-primary__tab.is-active, .tabs-secondary__tab,
+.tabs-secondary__tab.is-active {
+  float: right;
+}
+
+/**
+ * Inline styles.
+ */
+/* List of links */
+/* line 77, ../sass/components/_misc-rtl.scss */
+.inline li {
+  /* Bug in Safari causes display: inline to fail. */
+  display: inline-block;
+  padding: 0 0 0 1em;
+}
+
+/* The inline field label used by the Fences.module */
+/* line 84, ../sass/components/_misc-rtl.scss */
+span.field-label {
+  padding: 0 0 0 1em;
+}
+
+/**
+ * "More" links.
+ */
+/* line 91, ../sass/components/_misc-rtl.scss */
+.more-link {
+  text-align: left;
+}
+
+/* line 94, ../sass/components/_misc-rtl.scss */
+.more-help-link {
+  text-align: left;
+}
+
+/* line 97, ../sass/components/_misc-rtl.scss */
+.more-help-link a {
+  background-position: 100% 50%;
+  padding: 1px 20px 1px 0;
+}
+
+/**
+ * Menus.
+ */
+/* line 105, ../sass/components/_misc-rtl.scss */
+.menu__item.is-collapsed {
+  list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
+}
+
+/**
+ * Comments.
+ */
+/* Nested comments are indented. */
+/* line 117, ../sass/components/_misc-rtl.scss */
+.indented {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+/**
+ * Forms.
+ */
+/* Drupal's default login form block */
+/* line 127, ../sass/components/_misc-rtl.scss */
+#user-login-form {
+  text-align: right;
+}
+
+/* line 132, ../sass/components/_misc-rtl.scss */
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link {
+  /* Un-do some of the padding on the ul list. */
+  margin-left: 0;
+  margin-right: -20px;
+}
+
+/*
+ * Drupal admin tables.
+ */
+/* line 142, ../sass/components/_misc-rtl.scss */
+form th {
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+/* line 155, ../sass/components/_misc-rtl.scss */
+html.js .collapsible .fieldset-legend {
+  background-position: 98% 75%;
+  padding-left: 0;
+  padding-right: 15px;
+}
+/* line 160, ../sass/components/_misc-rtl.scss */
+html.js .collapsed .fieldset-legend {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
+  background-position: 98% 50%;
+}
+
+/* SMACSS theme rules */
+/* @import "theme-A-rtl"; */
+/* @import "theme-B-rtl"; */

@@ -1,0 +1,23 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: cobenash
+ * Date: 15/10/28
+ * Time: 下午7:49
+ */
+
+/**
+ * @file
+ * Default simple view template to display a list of rows.
+ *
+ * @ingroup views_templates
+ */
+?>
+<?php if (!empty($title)): ?>
+  <div><?php print $title; ?></div>
+<?php endif; ?>
+<?php foreach ($rows as $id => $row): ?>
+  <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
+    <?php print $row; ?>
+  </div>
+<?php endforeach; ?>

@@ -1,0 +1,1636 @@
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+
+// We are going to create a fluid grid with 1, 3, or 5 columns and 20px gutters
+// between columns (applied as 10px of left/right padding on each column).
+$zen-column-count:  20;
+$zen-gutter-width:  10px;
+
+// If you need IE6/7 support for box-sizing: border-box (default), see _init.scss
+//$zen-box-sizing: content-box;
+
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: false;
+// $zen-auto-include-flow-item-base: false;
+
+// Suppress this section of CSS for RTL layouts since it contains no LTR-specific styles.
+@if $zen-reverse-all-floats == false {
+
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+#page{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+
+/* Apply the shared properties of grid items in a single, efficient ruleset. */
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+  // See the note about $zen-auto-include-item-base above.
+  @include zen-grid-item-base();
+}
+
+/* Containers for grid items and flow items. */
+#header,
+#main,
+#footer {
+  @include zen-grid-container();
+}
+
+/* Navigation bar */
+@media all and (min-width: 480px) {
+  #main {
+    /* Move all the children of #main down to make room. */
+    padding-top: $nav-height;
+    position: relative;
+  }
+  #navigation {
+    /* Move the navbar up inside #main's padding. */
+    position: absolute;
+    top: 0;
+    height: $nav-height;
+    width: $zen-grid-width;
+  }
+}
+
+} // End of @if $zen-reverse-all-floats == true
+
+/**
+ * Use 3 grid columns for smaller screens.
+ */
+@media all and (min-width: 480px) and (max-width: 959px) {
+
+  $zen-column-count: 3;
+
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(2, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 2 columns, starting in 1st column from left. */
+    #content {
+      @include zen-grid-item(2, 1);
+    }
+
+    /* Span 1 column, starting in 3rd column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 3);
+    }
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 2 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(2, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+
+    /* Start a new row and span all 3 columns. */
+    .region-sidebar-second {
+      @include zen-grid-item(3, 1);
+      @include zen-nested-container(); // Since we're making every block in this region be a grid item.
+      @include zen-clear();
+
+      /* Apply the shared properties of grid items in a single, efficient ruleset. */
+      .block {
+        @include zen-grid-item-base();
+      }
+      /* Span 1 column, starting in the 1st column from left. */
+      .block:nth-child(3n+1) {
+        @include zen-grid-item(1, 1);
+        @include zen-clear();
+      }
+      /* Span 1 column, starting in the 2nd column from left. */
+      .block:nth-child(3n+2) {
+        @include zen-grid-item(1, 2);
+      }
+      /* Span 1 column, starting in the 3rd column from left. */
+      .block:nth-child(3n) {
+        @include zen-grid-item(1, 3);
+      }
+    }
+  }
+}
+
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (min-width: 960px) {
+
+  $zen-column-count: 5;
+
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 4 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(4, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 4 columns, starting in 1st column from left. */
+    #content {
+      @include zen-grid-item(4, 1);
+    }
+
+    /* Span 1 column, starting in 5th column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 5);
+    }
+  }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 3 columns, starting in 2nd column from left. */
+    #content {
+      @include zen-grid-item(3, 2);
+    }
+
+    /* Span 1 column, starting in 1st column from left. */
+    .region-sidebar-first {
+      @include zen-grid-item(1, 1);
+    }
+
+    /* Span 1 column, starting in 5th column from left. */
+    .region-sidebar-second {
+      @include zen-grid-item(1, 5);
+    }
+  }
+}
+
+/*My CSS*/
+$zen-column-count:  20;
+@media all and (min-width: 480px) {
+  
+  #header-top{
+    @include zen-grid-item-base();
+    #block-views-ad-block-block{
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+
+    }
+    #block-imageblock-3{
+      float: left;
+      display: inline-block;
+      width: 20%;
+    }
+    #block-search-form{
+      float: left;
+      display: inline-block;
+      width: 65%;
+      input#edit-search-block-form--2,input#edit-search-block-form--4{
+        width: 80%;
+      }
+    }
+    #block-block-3{
+      float: right;
+    }
+    #block-menu-block-1{
+      clear: both;
+      float: left;
+    }
+    #block-menu-block-2{
+      float: right;
+    }
+  }
+
+  #header{
+    #block-search-form{
+      float: right;
+      display: block;
+      width: 55%;
+      margin-bottom: 10px;
+      input#edit-search-block-form--2,input#edit-search-block-form--4{
+        width: 80%;
+      }
+    }
+    #block-menu-block-5{
+      float: right;
+    }
+    #block-superfish-1{
+      display: none;
+    }
+    a#logo{
+      display: none;
+    }
+    #block-block-4,#block-block-5{
+      float: right;
+    }
+  }
+
+  #content{
+
+    .region-highlighted{
+
+      #block-views-elle-slideshow-block-5{
+        @include zen-grid-item(20,1);
+        @include zen-grid-item-base();
+      }
+    }
+
+    #block-views-elle-tv-block{
+      @include zen-grid-item(13,1);
+      ul{
+        li:first-child{
+          display:inline-block;
+          width: 100%;
+        }
+        li:nth-child(2){
+          clear: both;
+          display:inline-block;
+          width: 50%;
+          overflow: hidden;
+          float: left;
+        }
+        li:nth-child(3){
+          display:inline-block;
+          width: 50%;
+          overflow: hidden;
+          float: left;
+        }
+      }
+    }
+
+    #block-views-ad-block-block-1{
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-ad-block-block-2,#block-views-ad-block-block-3{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+      margin: 20px 0px;
+    }
+    #block-nodeblock-49,#block-nodeblock-55{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+    }
+    #block-views-elle-hot-news-block{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+      @include zen-nested-container();
+      li.news-block{
+        .views-field-field-image{
+          @include zen-grid-item(12,1,right);
+        }
+        .views-field-sharethis{
+          @include zen-grid-item(6,2);
+        }
+        .views-field-title{
+          @include zen-clear(left);
+          @include zen-grid-item(6,2); 
+        }
+        .views-field-body{
+          @include zen-clear(left);
+          @include zen-grid-item(6,2); 
+        }
+      }
+    }
+    #extra-social{
+       display: none !important;
+    }
+    #block-views-elle-shopping-block{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+      @include zen-nested-container();
+      li.shopping-block{
+        &:nth-child(1){
+          @include zen-grid-item(3.84,1);
+        }
+        &:nth-child(2){
+          @include zen-grid-item(3.84,5.04);
+        }
+        &:nth-child(3){
+          @include zen-grid-item(3.84,9.08);
+        }
+        &:nth-child(4){
+          @include zen-grid-item(3.84,13.12);
+        }
+        &:nth-child(5){
+          @include zen-grid-item(3.84,17.16);
+        }
+      }
+    }
+    #block-hellosanta-elle-instagram{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+      ul.instagram-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        @include zen-grid-item(20,1);
+        @include zen-nested-container();
+        li.instagram-block{
+          float: left;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          &:nth-child(1){
+            @include zen-grid-item(6,1);
+          }
+          &:nth-child(2){
+            @include zen-grid-item(6,8);
+          }
+          &:nth-child(3){
+            @include zen-grid-item(6,15);
+          }
+        }
+      }
+    }
+    #block-views-elle-editor-block{
+      @include zen-clear();
+      @include zen-grid-item(20,1);
+      ul.editor-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        @include zen-grid-item(20,1);
+        @include zen-nested-container();
+        li.editor-block{
+          float: left;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          &:nth-child(1){
+            @include zen-grid-item(6,1);
+          }
+          &:nth-child(2){
+            @include zen-grid-item(6,8);
+          }
+          &:nth-child(3){
+            @include zen-grid-item(6,15);
+          }
+        }
+      }
+    }
+
+    /*DECOR page*/
+    .decor-area{
+      @include zen-grid-item(13,1);
+      $zen-column-count:  13;
+      ul.decor-list{
+        li.decor-block{
+          .views-field-field-image{
+            width: zen-grid-item-width(7);
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    $zen-column-count:  20;
+
+    #block-views-ad-block-block-4{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-nodequeue-1-block{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-nodeblock-62,#block-nodeblock-63{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-5,#block-views-ad-block-block-6{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-7{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+
+    /*DECOR page*/
+
+    /*WEDDING Page*/
+    .wedding-area{
+      @include zen-grid-item(13,1);
+      $zen-column-count:  13;
+      ul.wedding-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        li.wedding-block{
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          float: left;
+          overflow: hidden;
+          width: zen-grid-item-width(6);
+          margin-right: zen-grid-item-width(0.9);
+          &:nth-child(2n){
+            margin-right:0px;
+          }
+        }
+      }
+    }
+    $zen-column-count:  20;
+    #block-views-ad-block-block-12{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-nodequeue-1-block-1{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-13,#block-views-ad-block-block-14{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-15{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+    /*WEDDING Page*/
+
+    /*accessories Page*/
+
+    .accessories-area{
+      @include zen-grid-item(13,1);
+      $zen-column-count:  13;
+      ul.accessories-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        li.accessories-block{
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          float: left;
+          overflow: hidden;
+          width: zen-grid-item-width(6);
+          margin-right: zen-grid-item-width(0.9);
+          &:nth-child(2n){
+            margin-right:0px;
+          }
+        }
+      }
+    }
+    $zen-column-count:  20;
+    #block-views-ad-block-block-16{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-nodequeue-1-block-2{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-17,#block-views-ad-block-block-18{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-19{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+    /*accessories Page*/
+
+    /*ELLE GIRL*/
+    .girl-area{
+      @include zen-grid-item(13,1);
+      $zen-column-count:  13;
+      ul.girl-list{
+        li.girl-block{
+          .views-field-field-image{
+            @include zen-grid-item(6,1);
+          }
+          .views-field-sharethis{
+            @include zen-grid-item(6,1,right);
+          }
+          .views-field-title{
+            @include zen-clear(right);
+            @include zen-grid-item(6,1,right);
+          }
+          .views-field-body,.views-field-nid{
+            @include zen-clear(right);
+            @include zen-grid-item(6,1,right); 
+          }
+        }
+      }
+    }
+    $zen-column-count:  20;
+    #block-views-ad-block-block-8{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-nodequeue-1-block-3{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-9,#block-views-ad-block-block-10{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-11{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+    /*ELLE GIRL*/
+
+    /*頻道頁面*/
+    
+    $zen-column-count:  20;
+    #block-views-nodequeue-1-block-4{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-folder-banner-block-1{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+    #block-views-ad-folder-banner-block-2,#block-views-ad-folder-banner-block-3{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-folder-banner-block-4{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      text-align: center;
+    }
+    /*頻道頁面*/
+
+    $zen-column-count:  20;
+
+    /*node content area*/
+    .node-article-area,.search-results.node-results{
+      @include zen-grid-item(13,1);
+    }
+    
+
+    #block-views-ad-article-block-block{
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-nodequeue-1-block-5{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-ad-article-block-block-1{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-ad-article-block-block-2{
+      @include zen-clear(left);
+      @include zen-grid-item(6,1);
+    }
+
+    #block-views-ad-article-block-block-3{
+      @include zen-grid-item(6,8);
+    }
+
+    /*node content area*/
+
+    /** ELLE TV **/
+
+    $zen-column-count:  20;
+
+    #block-views-elle-tv-block-1{
+      @include zen-grid-item(20,1);
+
+      ul{
+        li.views-row-1{
+          @include zen-grid-item(10,1);
+        }
+        li.views-row-2{
+          @include zen-grid-item(9,1,right);
+          $zen-column-count:  9;
+          .field-name-field-cover-image{
+            float: left;
+            width: zen-grid-item-width(4);
+            @include zen-grid-item-base();
+          }
+          $zen-column-count:  20;
+        }
+        li.views-row-3,li.views-row-4 {
+          @include zen-clear(right);
+          @include zen-grid-item(9, 1, right);
+          $zen-column-count: 9;
+          .field-name-field-cover-image {
+            float: left;
+            width: zen-grid-item-width(4);
+            @include zen-grid-item-base();
+          }
+          $zen-column-count: 20;
+        }
+
+      }
+    }
+
+    .elletv{
+      @include zen-clear(both);
+      li.elletv-block{
+        &:nth-child(3n+1){
+          @include zen-clear();
+          @include zen-grid-item(6,1);
+          @include zen-grid-item-base();
+        }
+        &:nth-child(3n+2){
+          @include zen-grid-item(6,8);
+          @include zen-grid-item-base();
+        }
+        &:nth-child(3n){
+          @include zen-grid-item(6,15);
+          @include zen-grid-item-base();
+        }
+      }
+    }
+
+    #block-views-elle-tv-block-2{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+      li.elletv-block{
+        &:nth-child(3n+1){
+          @include zen-clear();
+          @include zen-grid-item(6,1);
+          @include zen-grid-item-base();
+        }
+        &:nth-child(3n+2){
+          @include zen-grid-item(6,8);
+          @include zen-grid-item-base();
+        }
+        &:nth-child(3n){
+          @include zen-grid-item(6,15);
+          @include zen-grid-item-base();
+        }
+      }
+    }
+
+    #block-views-ad-block-block-20{
+      @include zen-grid-item(6,1,right);
+    }
+
+
+    #block-views-nodequeue-1-block-6,#block-views-ad-block-block-21
+    {
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    /*ELLE TV*/
+
+    /** column area **/
+    #block-views-elle-editor-block-2{
+      @include zen-grid-item(13,1);
+      $zen-column-count:13;
+      ul.editor-list{
+        li.editor-block{
+          @include zen-grid-item-base();
+          &:nth-child(1){
+            @include zen-grid-item(7,1);
+          }
+          &:nth-child(2){
+            @include zen-grid-item(5,1,right);
+          }
+          &:nth-child(3){
+            @include zen-clear(right);
+            @include zen-grid-item(5,1,right);
+          }
+        }
+      }
+    }
+    $zen-column-count:20;
+    #block-views-elle-editor-block-3{
+      @include zen-clear(left);
+      @include zen-grid-item(13,1);
+      $zen-column-count:13;
+      ul.editor-list{
+        li.editor-block{
+          @include zen-grid-item-base();
+          &:nth-child(1){
+            @include zen-grid-item(7,1);
+          }
+          &:nth-child(2){
+            @include zen-grid-item(5,1,right);
+          }
+          &:nth-child(3){
+            @include zen-clear(right);
+            @include zen-grid-item(5,1,right);
+          }
+        }
+      }
+    }
+    $zen-column-count:20;
+    #block-views-nodequeue-1-block-8{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    .column-area{
+
+      ul.editor-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        @include zen-grid-item(20,1);
+        @include zen-nested-container();
+        li.editor-block{
+          float: left;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          @include zen-grid-item-base();
+          width: zen-grid-item-width(10);
+          margin-bottom: 20px;
+          .list-wrapper{
+            padding-left: 150px !important;
+            position: relative;
+            .views-field-field-avatar{
+              position: absolute;
+              left: 5%;
+              top: 50%;
+              margin-top: -50px;
+            }
+          }
+        }
+      }
+    }
+
+    #block-views-ad-block-block-23{
+      @include zen-clear(both);
+      @include zen-grid-item(20,1);
+    }
+
+    #block-views-elle-editor-block-1{
+      ul.editor-list{
+        li.editor-block{
+          width: 100%;
+          .list-wrapper{
+            padding-left: zen-grid-item-width(4) !important;
+            padding-right: zen-grid-item-width(2) !important;
+            position: relative;
+            .views-field-field-avatar{
+              position: absolute;
+              left: zen-grid-item-width(1);
+              top: 50%;
+              margin-top: -50px;
+            }
+          }
+        }
+      }
+    }
+
+    ul.columnist-list{
+      li.columnist-article{
+        .list-wrapper{
+          padding-bottom: 20px;
+          padding-left: 150px;
+          margin-top: 20px;
+          padding-right: 10px;
+          position: relative;
+          .views-field-field-image{
+            position: absolute;
+            left: 10px;
+            top: 0px;
+          }
+
+        }
+      }
+    }
+
+    #block-views-ad-block-block-24{
+      @include zen-grid-item(6,1,right);
+    }
+    #block-views-ad-block-block-25{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+    /** column area **/
+
+    /** EVENT AREA **/
+
+    .event-area{
+
+      ul.event-list{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        @include zen-grid-item(20,1);
+        @include zen-nested-container();
+        li.event-block{
+          float: left;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          @include zen-grid-item-base();
+          width: zen-grid-item-width(4);
+          margin-bottom: 20px;
+          margin-right: zen-grid-item-width(3);
+          &:nth-child(3n+1){
+            margin-left: zen-grid-item-width(1);
+          }
+          &:nth-child(3n){
+            margin-right: zen-grid-item-width(1);
+          }
+        }
+      }
+    }
+
+    #block-views-ad-block-block-27{
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-nodequeue-1-block-7{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    #block-views-ad-block-block-28{
+      @include zen-clear(right);
+      @include zen-grid-item(6,1,right);
+    }
+
+    /** EVENT AREA **/
+
+    /** User Login Register Area  **/
+
+    #block-views-ad-special-block-6{
+      @include zen-grid-item(13,1);
+      @include zen-grid-item-base();
+    }
+    form#user-login,form#user-register-form{
+      @include zen-grid-item(6,1,right);
+      @include zen-grid-item-base();
+    }
+
+    /** User Login Register Area  **/
+
+    /** Weform Area **/
+
+    .node-webform{
+      @include zen-grid-item(20,1);
+      @include zen-grid-item-base();
+      @include zen-nested-container();
+
+      .view-eva-company-info{
+        @include zen-clear();
+        @include zen-grid-item(20,1);
+
+        .views-field-field-company-addr{
+          @include zen-grid-item(10,1);
+        }
+        .views-field-field-company-name{
+          @include zen-grid-item(9,1,right);
+        }
+        .views-field-field-company-eng-name{
+          @include zen-clear(right);
+          @include zen-grid-item(9,1,right);
+        }
+        .views-field-field-company-addr-1,.views-field-field-company-eng-addr{
+          @include zen-clear(right);
+          @include zen-grid-item(9,1,right);
+        }
+        .views-field-field-company-phone{
+          @include zen-clear(right);
+          @include zen-grid-item(9,1,right);
+        }
+        .views-field-field-company-fax{
+          @include zen-clear(right);
+          @include zen-grid-item(9,1,right);
+        }
+      }
+      .field-name-webform-title{
+        @include zen-clear();
+        @include zen-grid-item(20,1);
+        margin-top: 30px;
+      }
+      .webform-client-form{
+        @include zen-clear();
+        @include zen-grid-item(18,2);
+        .webform-component--username{
+          display: block;
+          width: zen-grid-item-width(6);
+          margin-right: zen-grid-item-width(1);
+          float: left;
+        }
+        .webform-component-email{
+          display: block;
+          width: zen-grid-item-width(6);
+          float: left;
+        }
+        .webform-component--title{
+          display: block;
+          width: zen-grid-item-width(6);
+          float: right;
+        }
+      }
+    }
+
+    /** Weform Area **/
+
+    /** 網站地圖 **/
+    #block-menu-block-6{
+      ul.menu{
+        li{
+          &:nth-child(3n+1){
+            @include zen-clear(both);
+            @include zen-grid-item(5,1);
+          }
+          &:nth-child(3n+2){
+            @include zen-grid-item(5,8.5);
+          }
+          &:nth-child(3n){
+            @include zen-grid-item(5,1,right);
+          }
+        }
+
+      }
+    }
+    /** 網站地圖 **/
+
+
+  }
+  //end of content
+
+  .region-bottom{
+
+    #block-menu-block-4{
+      li#global-website{
+        ul.menu{
+          li{
+            width: 12%;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media all and (min-width: 481px) and (max-width: 999px){
+  #main{
+    padding-top: 0px !important;
+  }
+  #content{
+    #block-views-ad-block-block-1{
+      display: none;}
+    #block-views-elle-tv-block{
+      @include zen-grid-item(20,1);
+      img{
+        width: 100%;}
+    }
+  }
+}
+
+
+@media all and (min-width: 1000px){
+   body.elle-girl{
+  #header-top{display: none;}
+    #header{
+      padding-top: 0px;
+      .extend-header{
+        display: block !important;
+        background: #000;
+        padding-left: -3000px;
+        margin-left: -3000px;
+        padding-right: -3000px;
+        margin-right: -3000px;
+        width: auto !important;
+      }
+    }
+  }
+  #header-top{
+
+    #block-views-ad-block-block{
+      float: left;
+      display: block;
+      width: 49%;
+    }
+    #block-search-form{
+      float: right;
+      display: block;
+      width: 49%;
+      input#edit-search-block-form--2,input#edit-search-block-form--4{
+        width: 80%;
+      }
+    }
+    #block-menu-block-1{
+      display: inline-block;
+      clear: both;
+      float: left;
+    }
+    #block-menu-block-2{
+      float: right;
+      display: inline-block;
+    }
+
+    #block-block-3,#block-imageblock-3{
+      display: none;
+    }
+  }
+  #header{
+    #block-superfish-1{  display: block;}
+    a#logo{
+      display: inline-block;
+      float: none;
+      max-width: 192px;
+    }
+    #block-block-4,#block-block-5{
+      display: none;
+    }
+  }
+
+  #content{
+
+  }
+}
+@media all and (min-width: 768px) and (max-width: 960px){
+  body.page-node{
+    #header{
+      display: none;
+    }
+  }
+   #header{
+    #block-search-form{
+      float: left !important;
+      display: inline-block !important;
+      width: 55%;
+      margin-bottom: 10px;
+      input#edit-search-block-form--2{
+        width: 80%;
+      }
+      input#edit-search-block-form--4{
+        width: 70%;
+      }
+    }
+    
+    #block-menu-block-5{
+      text-align: left !important;
+      float: none !important;
+    }
+  }
+  #main{
+    #content{
+
+    }
+  }
+}
+$zen-column-count:  20;
+@media all and (min-width: 480px) and (max-width: 767px){
+   body.page-node{
+    #header{
+      display: none;
+    }
+  }
+  #header{
+
+    #block-search-form{
+       float: left !important;
+      display: inline-block !important;
+      width: 70% !important;
+      .form-item{
+        input#edit-search-block-form--2{
+          width: 77%;
+        }
+        input#edit-search-block-form--4{
+          width: 70%;
+        }
+      }
+    }
+    #block-block-4,#block-block-5{
+      float: right;
+    }
+    #block-menu-block-5{
+      text-align: left !important;
+    }
+  }
+  #header-top{
+    #block-search-form{
+      width: 70% !important;
+      .form-item{
+        input#edit-search-block-form--2,input#edit-search-block-form--4{
+          width: 77%;
+        }
+      }
+    }
+  }
+  #main{
+
+    #content{
+      #block-views-elle-hot-news-block{
+        @include zen-clear();
+        @include zen-grid-item(20,1);
+        @include zen-nested-container();
+        li.news-block{
+          .views-field-field-image{
+            @include zen-grid-item(20,1);
+            img{
+              width: 100%;
+            }
+          }
+          .views-field-sharethis{
+            @include zen-grid-item-base();
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+          .views-field-title{
+            @include zen-grid-item-base();
+            @include zen-clear(left);
+            @include zen-grid-item(20,1); 
+          }
+          .views-field-body{
+            @include zen-grid-item-base();
+            @include zen-clear(left);
+            @include zen-grid-item(20,1); 
+          }
+        }
+      }
+      .column-area{
+
+        ul.editor-list{
+          li.editor-block{
+            @include zen-grid-item-base();
+            width: zen-grid-item-width(20);
+          }
+        }
+      }
+      .girl-area{
+        @include zen-grid-item(13,1);
+        $zen-column-count:  13;
+        ul.girl-list{
+          li.girl-block{
+            .views-field-field-image{
+              @include zen-grid-item(13,1);
+            }
+            .views-field-sharethis{
+              @include zen-clear();
+              @include zen-grid-item(13,1,right);
+            }
+            .views-field-title{
+              @include zen-clear(right);
+              @include zen-grid-item(13,1,right);
+            }
+            .views-field-body,.views-field-nid{
+              @include zen-clear(right);
+              @include zen-grid-item(13,1,right); 
+            }
+          }
+        }
+      }
+      .wedding-area{
+        ul.wedding-list{
+          li.wedding-block{
+            padding-top: 0px;
+            width: zen-grid-item-width(9.3);
+            margin-right: zen-grid-item-width(1);
+            &:nth-child(2n){
+              margin-right:0px;
+            }
+           .views-field-field-image{
+            padding: 0px;
+            width: 100%;
+            img{width: 100%;}
+           } 
+          }
+        }
+      }
+
+      $zen-column-count:  20;
+
+      /** Weform Area **/
+
+      .node-webform{
+        @include zen-grid-item(20,1);
+        @include zen-grid-item-base();
+        @include zen-nested-container();
+
+        .view-eva-company-info{
+          @include zen-clear();
+          @include zen-grid-item(20,1);
+
+          .views-field-field-company-addr{
+            @include zen-grid-item(20,1);
+          }
+          .views-field-field-company-name{
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+          .views-field-field-company-eng-name{
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+          .views-field-field-company-addr-1,.views-field-field-company-eng-addr{
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+          .views-field-field-company-phone{
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+          .views-field-field-company-fax{
+            @include zen-clear();
+            @include zen-grid-item(20,1);
+          }
+        }
+        .field-name-webform-title{
+          @include zen-clear();
+          @include zen-grid-item(20,1);
+          margin-top: 30px;
+        }
+        .webform-client-form{
+          @include zen-clear();
+          @include zen-grid-item(20,1);
+          .webform-component--username{
+            display: block;
+            width: zen-grid-item-width(9.5);
+            margin-right: zen-grid-item-width(1);
+            float: left;
+            margin-bottom: 0px;
+          }
+          .webform-component-email{
+            display: block;
+            width: zen-grid-item-width(9.5);
+            float: left;
+            margin-bottom: 0px;
+          }
+          .webform-component--title{
+            clear: both;
+            display: block;
+            width: 100%;
+            float: left;
+          }
+        }
+      }
+      /** Weform Area **/
+
+      /** 網站地圖 **/
+      #block-menu-block-6{
+        ul.menu{
+          li{
+            &:nth-child(2n+1){
+              @include zen-clear(both);
+              @include zen-grid-item(8.5,2);
+            }
+            &:nth-child(2n){
+              clear: none;
+              @include zen-grid-item(8.5,11.5);
+            }
+            ul.menu li{
+              display: inline-block;
+              width: 100%;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+
+        }
+      }
+      /** 網站地圖 **/
+    }
+    //end of content
+  }
+  //end of main
+
+  .region-bottom{
+    #block-menu-block-4{
+      li#global-website{
+        ul.menu{
+          li{
+            width: 18%;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 479px){
+   body.page-node{
+    #header{
+      display: none;
+    }
+  }
+  body.front{
+    #header{
+      #logo{display: none;}
+      #block-superfish-1{
+        display: none;
+      }
+    }
+  }
+  #header-top{
+    #block-imageblock-3{
+      .block-image img{
+        width: 50%;
+      }
+    }
+    #block-search-form{
+      width: 100%;
+      .form-item{
+        input#edit-search-block-form--2,input#edit-search-block-form--4{
+          width: 70%;
+        }
+      }
+    
+    }
+    #block-views-ad-block-block{
+      display: none;}
+
+    #block-block-3{
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      width: 40px;
+      height: 45px;
+    }
+    #block-menu-block-2,#block-menu-block-1{
+      display: none;
+    }
+  }
+  #header{
+    #block-search-form{
+      text-align: left !important;
+      float: left !important;
+      display: inline-block !important;
+      width: 80% !important;
+      .form-item{
+        input#edit-search-block-form--2{
+          width: 70%;
+        }
+      }
+    }
+    #block-block-4,#block-block-5{
+      float: right;
+    }
+    #block-menu-block-5{
+      clear: both;
+      text-align: left !important;
+      margin-bottom: 5px !important;
+    }
+    #block-superfish-1{
+      display: none;
+    }
+  }
+  #main{
+    #content{
+      #block-views-elle-slideshow-block{
+        ul.flex-direction-nav{
+          display: none;}
+      }
+      #block-views-nodequeue-1-block-4{
+        display: none;
+      }
+      .accessories-area{
+        ul.accessories-list{
+          li.accessories-block{
+            .views-field-field-image{
+              img{width: 100%;}
+            }
+          }
+        }
+      }
+      .column-area{
+
+        ul.editor-list{
+          li.editor-block{
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .wedding-area{
+        ul.wedding-list{
+          li.wedding-block{
+            padding-top: 0px;
+           .views-field-field-image{
+            padding: 0px;
+            width: 100%;
+            img{width: 100%;}
+           } 
+          }
+        }
+      }
+      #block-views-elle-shopping-block{
+        .view-elle-shopping{
+          text-align: center;
+        }
+      }
+      #block-hellosanta-elle-instagram{
+        li.instagram-block{
+          margin-bottom: 20px;
+        }
+      }
+      #block-views-elle-editor-block{
+        li.views-row{
+          margin-bottom: 20px;
+        }
+      }
+      #view-eva-article-postdate-title{
+        .view-content{         
+          .sharethis-wrapper{
+            #extra-social{
+              #line-share{
+                img{
+
+                }
+              }
+            }
+          }
+        }
+      }
+      $zen-column-count:  20;
+
+      /** Weform Area **/
+
+      .node-webform{
+        display: block;
+        width: 100%;
+
+        .view-eva-company-info{
+          display: inline-block;
+          width: 100%;
+
+          .views-field-field-company-addr{
+            display: inline-block;
+            width: 100%;
+          }
+          .views-field-field-company-name{
+            display: inline-block;
+            width: 100%;
+          }
+          .views-field-field-company-eng-name{
+            display: inline-block;
+            width: 100%;
+          }
+          .views-field-field-company-addr-1,.views-field-field-company-eng-addr{
+            display: inline-block;
+            width: 100%;
+          }
+          .views-field-field-company-phone{
+            display: inline-block;
+            width: 100%;
+          }
+          .views-field-field-company-fax{
+            display: inline-block;
+            width: 100%;
+          }
+        }
+        .field-name-webform-title{
+          display: inline-block;
+          width: 100%;
+        }
+        .webform-client-form{
+          display: inline-block;
+          width: 100%;
+          .webform-component--username{
+            display: inline-block;
+            width: 100%;
+          }
+          .webform-component-email{
+            display: inline-block;
+            width: 100%;
+          }
+          .webform-component--title{
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+      /** Weform Area **/
+
+      /** 網站地圖 **/
+      #block-menu-block-6{
+        @include zen-grid-item-base();
+        ul.menu{
+          li {
+            display: inline-block;
+            width: 90%;
+            padding: 0px 5%;
+            ul.menu li {
+              display: inline-block;
+              width: 100%;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+        }
+      }
+      /** 網站地圖 **/
+    }
+    //end of content
+  }
+  //end of main
+  .region-bottom{
+    #block-menu-block-4{
+      ul.menu{
+        li.is-expanded{
+          text-align: center !important;
+          width: 100%;
+          span.nolink{
+            width: auto !important;
+            border-bottom: 1px solid #828282;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom:5px;
+            padding-right: 0px !important;
+            display: inline-block !important;
+            &:after{
+              display:none !important;
+            }
+          }
+          li.menu-mlid-710{
+            width: auto;
+            span.nolink{
+              display: inline-block;
+              list-style-image: none;
+              list-style-type: none;
+              margin-right: 20px;
+              position: relative;
+              bottom: -5px;
+              border-bottom: 0px;
+            }
+          }
+          ul.menu{
+            display: block !important;
+            text-align: center;
+            border: 0px !important;
+          }
+        }
+
+      }
+      li#global-website{
+        display: none;
+        margin-bottom: 20px;
+        ul.menu{
+          margin-left: 0px !important;
+          text-align: left;
+          padding: 0px 5%;
+          border-left: 0px !important;
+          li{
+            display: inline-block;
+            width: 18%;
+            text-align: left;
+
+          }
+        }
+      }
+    }
+  }
+}
