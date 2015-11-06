@@ -753,7 +753,7 @@ $zen-column-count:  20;
       }
     }
     $zen-column-count:20;
-    #block-views-elle-editor-block-3{
+    #block-views-elle-editor-block-3,#block-views-elle-editor-block-4{
       @include zen-clear(left);
       @include zen-grid-item(13,1);
       $zen-column-count:13;

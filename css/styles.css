@@ -1741,7 +1741,7 @@ table {
     margin-left: -38.46154%;
   }
   /* line 756, ../sass/layouts/_responsive.scss */
-  #content #block-views-elle-editor-block-3 {
+  #content #block-views-elle-editor-block-3, #content #block-views-elle-editor-block-4 {
     clear: left;
     float: left;
     width: 65%;
@@ -1749,7 +1749,7 @@ table {
     margin-right: -65%;
   }
   /* line 761, ../sass/layouts/_responsive.scss */
-  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block {
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block {
     padding-left: 5px;
     padding-right: 5px;
     -moz-box-sizing: border-box;
@@ -1759,21 +1759,21 @@ table {
     word-wrap: break-word;
   }
   /* line 763, ../sass/layouts/_responsive.scss */
-  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(1) {
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(1), #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(1) {
     float: left;
     width: 53.84615%;
     margin-left: 0%;
     margin-right: -53.84615%;
   }
   /* line 766, ../sass/layouts/_responsive.scss */
-  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) {
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2), #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(2) {
     float: right;
     width: 38.46154%;
     margin-right: 0%;
     margin-left: -38.46154%;
   }
   /* line 769, ../sass/layouts/_responsive.scss */
-  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) {
+  #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3), #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(3) {
     clear: right;
     float: right;
     width: 38.46154%;
@@ -5664,11 +5664,11 @@ body.free-article-full-mode #page #content .node-article-area {
   margin-top: 0px;
 }
 /* line 1738, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2, #content #block-views-elle-editor-block-3 {
+#content #block-views-elle-editor-block-2, #content #block-views-elle-editor-block-3, #content #block-views-elle-editor-block-4 {
   position: relative;
 }
 /* line 1740, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 h2.block-title, #content #block-views-elle-editor-block-3 h2.block-title {
+#content #block-views-elle-editor-block-2 h2.block-title, #content #block-views-elle-editor-block-3 h2.block-title, #content #block-views-elle-editor-block-4 h2.block-title {
   font-size: 18px;
   font-weight: normal;
   border-bottom: 2px solid black;
@@ -5677,53 +5677,53 @@ body.free-article-full-mode #page #content .node-article-area {
   margin-top: 0px;
 }
 /* line 1748, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list, #content #block-views-elle-editor-block-3 ul.editor-list {
+#content #block-views-elle-editor-block-2 ul.editor-list, #content #block-views-elle-editor-block-3 ul.editor-list, #content #block-views-elle-editor-block-4 ul.editor-list {
   margin: 0px;
   padding: 0px;
 }
 /* line 1751, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block {
   list-style-type: none;
   list-style-image: none;
 }
 /* line 1755, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block h2.editor-name, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block h2.editor-name {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block h2.editor-name, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block h2.editor-name, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block h2.editor-name {
   font-size: 18px;
   margin: 10px 0px;
 }
 /* line 1760, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) img, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) img {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) img, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) img, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(2) img {
   width: 80%;
 }
 /* line 1761, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) .views-field-body, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) .views-field-body {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) .views-field-body, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) .views-field-body, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(2) .views-field-body {
   display: none;
 }
 /* line 1763, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) .views-field-nid, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) .views-field-nid {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(2) .views-field-nid, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(2) .views-field-nid, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(2) .views-field-nid {
   display: none;
 }
 /* line 1767, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) img, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) img {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) img, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) img, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(3) img {
   width: 80%;
 }
 /* line 1768, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) .views-field-body, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) .views-field-body {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) .views-field-body, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) .views-field-body, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(3) .views-field-body {
   display: none;
 }
 /* line 1770, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) .views-field-nid, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) .views-field-nid {
+#content #block-views-elle-editor-block-2 ul.editor-list li.editor-block:nth-child(3) .views-field-nid, #content #block-views-elle-editor-block-3 ul.editor-list li.editor-block:nth-child(3) .views-field-nid, #content #block-views-elle-editor-block-4 ul.editor-list li.editor-block:nth-child(3) .views-field-nid {
   display: none;
 }
 /* line 1775, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 .more-link, #content #block-views-elle-editor-block-3 .more-link {
+#content #block-views-elle-editor-block-2 .more-link, #content #block-views-elle-editor-block-3 .more-link, #content #block-views-elle-editor-block-4 .more-link {
   position: absolute;
   top: 10px;
   right: 5px;
   font-size: 14px;
 }
 /* line 1780, ../sass/styles.scss */
-#content #block-views-elle-editor-block-2 .more-link a, #content #block-views-elle-editor-block-3 .more-link a {
+#content #block-views-elle-editor-block-2 .more-link a, #content #block-views-elle-editor-block-3 .more-link a, #content #block-views-elle-editor-block-4 .more-link a {
   color: #cfa972;
 }
 /* line 1786, ../sass/styles.scss */
