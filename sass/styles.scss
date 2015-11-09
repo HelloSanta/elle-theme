@@ -2254,7 +2254,7 @@ body.free-article-full-mode #page #content .node-article-area{
 				text-align: center;
 				margin-right: 0px;
 				margin-bottom: 10px;
-				span.nolink{
+				span.nolink,a.menu__link{
 					display: inline-block;
 					width: 273px;
 					height: 39px;
@@ -2423,6 +2423,9 @@ body.free-article-full-mode #page #content .node-article-area{
 
                     }
                     li.menu-mlid-710{
+					  span.nolink{
+						font-size: 13px;
+					  }
                       &:before{
                         float: right;
                       }
