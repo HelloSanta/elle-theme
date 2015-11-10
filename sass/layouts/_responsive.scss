@@ -616,6 +616,22 @@ $zen-column-count:  20;
     /*node content area*/
     .node-article-area,.search-results.node-results{
       @include zen-grid-item(13,1);
+
+      .view-elle-editor-node{
+        display: inline-block;
+        position: relative;
+        h2.editor-name{
+          border-bottom: 1px solid #7d7d7d;
+          font-size: 15px;
+        }
+        .views-field-field-avatar{
+          float: left;
+          margin: 10px;
+        }
+        p{
+          margin: 5px 0px;
+        }
+      }
     }
     
 
@@ -641,6 +657,7 @@ $zen-column-count:  20;
     #block-views-ad-article-block-block-3{
       @include zen-grid-item(6,8);
     }
+
 
     /*node content area*/
 
@@ -1104,7 +1121,7 @@ $zen-column-count:  20;
   }
 }
 @media all and (min-width: 768px) and (max-width: 960px){
-  body.page-node.front{
+  body.page-node.front,body.node-type-article{
     #header{
       display: none;
     }
@@ -1136,7 +1153,7 @@ $zen-column-count:  20;
 }
 $zen-column-count:  20;
 @media all and (min-width: 480px) and (max-width: 767px){
-  body.page-node.front{
+  body.page-node.front,body.node-type-article{
     #header{
       display: none;
     }
@@ -1363,7 +1380,7 @@ $zen-column-count:  20;
   }
 }
 @media all and (max-width: 479px){
-  body.page-node.front{
+  body.page-node.front,body.node-type-article{
     #header{
       display: none;
     }
@@ -1573,6 +1590,24 @@ $zen-column-count:  20;
         }
       }
       /** 網站地圖 **/
+
+      .node-article-area{
+        .view-elle-editor-node{
+          display: inline-block;
+          position: relative;
+          h2.editor-name{
+            border-bottom: 1px solid #7d7d7d;
+            font-size: 15px;
+          }
+          .views-field-field-avatar{
+            text-align: left;
+            margin: 10px;
+          }
+          p{
+            margin: 5px 0px;
+          }
+        }
+      }
     }
     //end of content
   }
