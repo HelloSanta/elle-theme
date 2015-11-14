@@ -57,11 +57,40 @@ function elle_preprocess_html(&$variables, $hook) {
         $parent=taxonomy_get_parents($tid);
         $current_term=taxonomy_term_load($tid);
         $current_term_eng=isset($current_term->field_eng_name['und'][0]['value']) ? $current_term->field_eng_name['und'][0]['value'] : NULL ;
-        $keyword = isset($node->metatags['zh-hant']['keywords']) ? $node->metatags['zh-hant']['keywords']['value'] : NULL;
+        if(isset($node->field_tags['und'][0]['tid'])){
+          $array=$node->field_tags['und'];
+          foreach($array as $key => $value){
+            $tid=$value['tid'];
+            $term_name=taxonomy_term_load($tid)->name;
+            $keyword=$keyword.$term_name.', ';
+          }
+        }
         $publish_time=Date('Y-m-d H:i:s',$node->created);
         foreach($parent as $key => $value){
           $channel=isset($value->field_eng_name['und'][0]['value']) ? $value->field_eng_name['und'][0]['value'] : NULL;
         }
+        break;
+      case 'free_article':
+        $type='free_article';
+        $tid=$node->field_folder_taxonomy['und'][0]['target_id'];
+        $eng_title = isset($node->field_english_title['und'][0]['value']) ? $node->field_english_title['und'][0]['value'] : NULL;
+        $author=$node->name;
+        $parent=taxonomy_get_parents($tid);
+        $current_term=taxonomy_term_load($tid);
+        $current_term_eng=isset($current_term->field_eng_name['und'][0]['value']) ? $current_term->field_eng_name['und'][0]['value'] : NULL ;
+        if(isset($node->field_tags['und'][0]['tid'])){
+          $array=$node->field_tags['und'];
+          foreach($array as $key => $value){
+            $tid=$value['tid'];
+            $term_name=taxonomy_term_load($tid)->name;
+            $keyword=$keyword.$term_name.', ';
+          }
+        }
+        $publish_time=Date('Y-m-d H:i:s',$node->created);
+        foreach($parent as $key => $value){
+          $channel=isset($value->field_eng_name['und'][0]['value']) ? $value->field_eng_name['und'][0]['value'] : NULL;
+        }
+
         break;
       default:
         $type=$machine_name;
