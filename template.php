@@ -37,17 +37,23 @@ function elle_preprocess_maintenance_page(&$variables, $hook) {
 
 function elle_preprocess_html(&$variables, $hook) {
 
+  //variable initial
+
+  $machine_name='';
+  $tid='';
+  $channel='';
+  $eng_title='';
+  $publish_time='';
+  $author='';
+  $current_term_eng='';
+  $keyword='';
+  $type='';
+  $content_id='';
   //Add ELLE Custom MetaTag on node page
   if (arg(0) == 'node' && is_numeric(arg(1))){
+    $content_id=arg(1);
     $node=node_load(arg(1));
     $machine_name= isset($node->type) ? $node->type : NULL;
-    $tid='';
-    $channel='';
-    $eng_title='';
-    $publish_time='';
-    $author='';
-    $current_term_eng='';
-    $keyword='';
     switch($machine_name){
       case 'article':
         $type='new_dossier';
@@ -94,88 +100,104 @@ function elle_preprocess_html(&$variables, $hook) {
         break;
       default:
         $type=$machine_name;
-
-    }
-
-    $html_head = array(
-      'data_type' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-type',
-          'content' => $type,
-        )
-      ),
-      'data_title' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-title',
-          'content' => $variables['head_title'],
-        )
-      ),
-      'data_pageName' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-pageName',
-          'content' => $channel.':'.$current_term_eng.':'.$eng_title,
-        )
-      ),
-      'data_channel' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-channel',
-          'content' => $channel,
-        )
-      ),
-      'data_internalsearch' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-internalsearch',
-          'content' => $keyword,
-        )
-      ),
-      'published_time' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-article:published_time',
-          'content' => $publish_time,
-        )
-      ),
-      'data_contentId' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-contentId',
-          'content' => arg(1),
-        )
-      ),
-      'data_author' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-author',
-          'content' => $author,
-        )
-      ),
-      'data_siteheir' => array(
-        '#type'=>'html_tag',
-        '#tag' => 'meta',
-        '#attributes' => array(
-          'property' => 'data-siteHeir',
-          'content' => $channel.','.$current_term_eng.','.$eng_title,
-        )
-      ),
-    );
-    foreach ($html_head as $key => $data) {
-      drupal_add_html_head($data, $key);
     }
   }
+  elseif(arg(0)=='taxonomy' && arg(1)=='term' && is_numeric(arg(2))){ //頻道頁面ELLE Data Tag
+    $tid=arg(2);
+    $content_id=arg(2);
+    $parent=taxonomy_get_parents($tid);
+    $current_term=taxonomy_term_load($tid);
+    $current_term_eng=isset($current_term->field_eng_name['und'][0]['value']) ? $current_term->field_eng_name['und'][0]['value'] : NULL ;
+    $keyword=isset($current_term->metatags['und']['keywords']['value']) ? $current_term->metatags['und']['keywords']['value'] : NULL;
+    if($parent){
 
+      foreach($parent as $key => $value){
+        $channel=isset($value->field_eng_name['und'][0]['value']) ? $value->field_eng_name['und'][0]['value'] : NULL;
+      }
+    }
+    else{
+      $channel=isset($current_term->field_eng_name['und'][0]['value']) ? $current_term->field_eng_name['und'][0]['value'] : NULL;
+    }
+
+  }
+
+  $html_head = array(
+    'data_type' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-type',
+        'content' => $type,
+      )
+    ),
+    'data_title' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-title',
+        'content' => $variables['head_title'],
+      )
+    ),
+    'data_pageName' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-pageName',
+        'content' => $channel.':'.$current_term_eng.':'.$eng_title,
+      )
+    ),
+    'data_channel' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-channel',
+        'content' => $channel,
+      )
+    ),
+    'data_internalsearch' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-internalsearch',
+        'content' => $keyword,
+      )
+    ),
+    'published_time' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-article:published_time',
+        'content' => $publish_time,
+      )
+    ),
+    'data_contentId' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-contentId',
+        'content' => $content_id,
+      )
+    ),
+    'data_author' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-author',
+        'content' => $author,
+      )
+    ),
+    'data_siteheir' => array(
+      '#type'=>'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'property' => 'data-siteHeir',
+        'content' => $channel.','.$current_term_eng.','.$eng_title,
+      )
+    ),
+  );
+  foreach ($html_head as $key => $data) {
+    drupal_add_html_head($data, $key);
+  }
 
 }
 // */
