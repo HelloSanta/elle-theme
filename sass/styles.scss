@@ -1022,6 +1022,12 @@ body.free-article-full-mode #page #content .node-article-area{
                           float: left;
                         }
 					}
+					.fb_iframe_widget{
+					  line-height: 18px;
+					  a:hover{
+						text-decoration: none;
+					  }
+					}
 				}
 				.views-field-body{
 					color: #a0a0a0;
@@ -1449,6 +1455,30 @@ body.free-article-full-mode #page #content .node-article-area{
   	.node-article-area{
       color: #000;
 	  padding-bottom: 30px;
+	  //p{
+		//font-size: 15px;
+		//line-height: 0.938em;
+	  //}
+	  //h5{
+		//font-size: 13px;
+		//line-height: 0.813em;
+	  //}
+	  //h4{
+		//font-size: 16px;
+		//line-height: 1em;
+	  //}
+	  //h3{
+		//font-size: 18px;
+		//line-height: 1.125em;
+	  //}
+	  //h2{
+		//font-size: 24px;
+		//line-height: 1.5em;
+	  //}
+	  //h1{
+		//font-size: 28px;
+		//line-height: 1.75em;
+	  //}
 	  .tags-area{
 		border-top: 1px solid #c7c7c7;
 		border-bottom: 1px solid #c7c7c7;
