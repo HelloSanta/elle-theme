@@ -43,6 +43,11 @@ Drupal.behaviors.my_custom_behavior = {
         }
       });
 
+      $(document).ajaxComplete(function(){
+          try{
+              FB.XFBML.parse();
+          }catch(ex){}
+      });
   }
 };
 

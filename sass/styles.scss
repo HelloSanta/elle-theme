@@ -32,6 +32,13 @@ body.page-hide-logo{
 		display: none;
 	}
 }
+body.front #content h1#page-title{
+  display: none;
+}
+body.page-hide-h1 #content h1#page-title{
+  display: none;
+}
+
 body.page-hide-breadcrumb{
 	.breadcrumb{display: none;}
 }
@@ -1455,30 +1462,31 @@ body.free-article-full-mode #page #content .node-article-area{
   	.node-article-area{
       color: #000;
 	  padding-bottom: 30px;
-	  //p{
-		//font-size: 15px;
-		//line-height: 0.938em;
-	  //}
-	  //h5{
-		//font-size: 13px;
-		//line-height: 0.813em;
-	  //}
-	  //h4{
-		//font-size: 16px;
-		//line-height: 1em;
-	  //}
-	  //h3{
-		//font-size: 18px;
-		//line-height: 1.125em;
-	  //}
-	  //h2{
-		//font-size: 24px;
-		//line-height: 1.5em;
-	  //}
-	  //h1{
-		//font-size: 28px;
-		//line-height: 1.75em;
-	  //}
+      font-family: "Josefin Sans",sans-serif,"儷黑 Pro","微軟正黑體" !important;
+	  p{
+		font-size: 16px !important;
+		line-height: 24px !important;
+	  }
+	  h5{
+		font-size: 13px !important;
+		line-height: 0.813em !important;
+	  }
+	  h4{
+		font-size: 16px !important;
+		line-height: 1em !important;
+	  }
+	  h3{
+		font-size: 18px !important;
+		line-height: 1.125em !important;
+	  }
+	  h2{
+		font-size: 24px !important;
+		line-height: 1.5em !important;
+	  }
+	  h1{
+		font-size: 28px !important;
+		line-height: 1.75em !important;
+	  }
 	  .tags-area{
 		border-top: 1px solid #c7c7c7;
 		border-bottom: 1px solid #c7c7c7;
