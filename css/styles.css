@@ -4553,6 +4553,13 @@ body.free-article-full-mode #page #content .node-article-area {
 #header #block-superfish-2 ul#superfish-2 li.sf-depth-1 ul li.sf-depth-2 a {
   color: #ffffff;
 }
+/* line 760, ../sass/styles.scss */
+#header #block-superfish-1 ul#superfish-1 li.sf-depth-1 ul li.sf-depth-2:hover,
+#header #block-superfish-1 ul#superfish-2 li.sf-depth-1 ul li.sf-depth-2:hover,
+#header #block-superfish-2 ul#superfish-1 li.sf-depth-1 ul li.sf-depth-2:hover,
+#header #block-superfish-2 ul#superfish-2 li.sf-depth-1 ul li.sf-depth-2:hover {
+  background: #535353;
+}
 /* line 769, ../sass/styles.scss */
 #header #block-superfish-1 ul#superfish-1 li#menu-218-1,
 #header #block-superfish-1 ul#superfish-1 li#menu-962-2,
