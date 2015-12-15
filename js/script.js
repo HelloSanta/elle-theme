@@ -21,6 +21,8 @@ Drupal.behaviors.my_custom_behavior = {
       $(window).load(function(){
         $('#block-superfish-1 ul#superfish-1').css('overflow','visible');
         $('#block-superfish-2 ul#superfish-2').css('overflow','visible');
+        
+        $( "#superfish-1 ul" ).prepend( "<div class='triangle'></div>" );
       });
 
       $('.column-area ul.editor-list li.views-row-6.editor-block').after('<li id="ad-destination"></li>');
@@ -40,8 +42,11 @@ Drupal.behaviors.my_custom_behavior = {
         } else {
           $('.region-bottom #block-menu-block-4 ul.menu li#global-website').slideUp();
           $('.region-bottom #block-menu-block-4 ul.menu li.menu-mlid-693 ul.menu li.menu-mlid-710').toggleClass('fa-chevron-down fa-chevron-up');
+
         }
       });
+
+
 
       $(document).ajaxComplete(function(){
           try{
