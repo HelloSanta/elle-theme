@@ -23,6 +23,7 @@ Drupal.behaviors.my_custom_behavior = {
         $('#block-superfish-2 ul#superfish-2').css('overflow','visible');
         
         $( "#superfish-1 ul" ).prepend( "<div class='triangle'></div>" );
+        
       });
 
       $('.column-area ul.editor-list li.views-row-6.editor-block').after('<li id="ad-destination"></li>');
