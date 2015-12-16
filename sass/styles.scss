@@ -14,7 +14,7 @@
 /* HTML element (SMACSS base) rules */
 
 @import "normalize";
-
+@import "_mixins";
 /* Layout rules */
 
 @import "layouts/responsive";
@@ -32,80 +32,7 @@
 
 
 /* @import "theme-B"; */
-%clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
 
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-   @-o-keyframes #{$name} {
-    @content; 
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
-@mixin centerer($horizontal: true, $vertical: true) {
-    position: absolute;
-    @if ($horizontal and $vertical) {
-        top: -2%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    @else if ($horizontal) {
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-    @else if ($vertical) {
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-}
-@mixin triangle($width, $dir, $color) {
-    @if $dir==up {
-        width: 0px;
-        height: 0px;
-        border-left: $width/2 solid transparent;
-        border-right: $width/2 solid transparent;
-        border-bottom: $width/2 solid $color;
-    }
-    @else if $dir==down {
-        width: 0px;
-        height: 0px;
-        border-left: $width/2 solid transparent;
-        border-right: $width/2 solid transparent;
-        border-top: $width/2 solid $color;
-    }
-    @else if $dir==right {
-        width: 0px;
-        height: 0px;
-        border-top: $width/2 solid transparent;
-        border-bottom: $width/2 solid transparent;
-        border-left: $width/2 solid $color;
-    }
-    @else if $dir==left {
-        width: 0px;
-        height: 0px;
-        border-top: $width/2 solid transparent;
-        border-bottom: $width/2 solid transparent;
-        border-right: $width/2 solid $color;
-    }
-}
 
 $border:#c7c7c7;
 $footer_text:#828282;
@@ -162,17 +89,17 @@ body.elle-girl {
                 margin-top: 20px;
                 ul.menu li {
                     &:before {
-                        content: ' ';
-                        display: block;
-                        width: 0;
-                        height: 0;
-                        border-style: solid;
-                        border-width: 2.5px 0 2.5px 5px;
-                        border-color: transparent transparent transparent #FFF;
-                        position: absolute;
-                        left: 0px;
-                        top: 50%;
-                        margin-top: -2.5px;
+                        // content: ' ';
+                        // display: block;
+                        // width: 0;
+                        // height: 0;
+                        // border-style: solid;
+                        // border-width: 2.5px 0 2.5px 5px;
+                        // border-color: transparent transparent transparent #FFF;
+                        // position: absolute;
+                        // left: 0px;
+                        // top: 50%;
+                        // margin-top: -2.5px;
                     }
                 }
             }
@@ -188,7 +115,7 @@ body.elle-girl {
                 }
             }
             #block-superfish-1 {
-            	@extend %clearfix;
+                @extend %clearfix;
                 padding-top: 20px;
                 background: #FFF;
                 padding-left: -3000px;
@@ -449,22 +376,17 @@ body.free-article-full-mode #page #content .node-article-area {
             bottom: 2px;
         }
     }
-    #block-menu-block-1{
-    	     width: 60%;
-    background: #000000;
-        padding-top: 6px;
-    padding-bottom: 3px;
-    }
-             
-    #block-menu-block-1,
-    #block-menu-block-5 {
-        font-size: 12px;
+    #block-menu-block-1 {
+    	font-size: 12px;
         margin-bottom: 0px;
-
-        ul.menu {
+        width: 60%;
+        background: #000000;
+        padding-top: 6px;
+        padding-bottom: 3px;
+         ul.menu {
             padding: 0px;
             margin: 0px;
-            li {
+            .menu-mlid-849,.menu-mlid-850,.menu-mlid-851,.menu-mlid-852,.menu-mlid-963 {
                 list-style-type: none;
                 list-style-image: none;
                 display: inline-block;
@@ -474,9 +396,9 @@ body.free-article-full-mode #page #content .node-article-area {
                 a {
                     text-decoration: none;
                     // color: transparent;
-                    &:before{
-                    	content: "►";
-                    	padding-right: 5px;
+                    &:before {
+                        content: "►";
+                        padding-right: 5px;
                     }
                     &:hover {
                         // text-decoration: underline;
@@ -576,6 +498,131 @@ body.free-article-full-mode #page #content .node-article-area {
                 }
             }
         }
+    
+    }
+
+    #block-menu-block-5 {
+        font-size: 12px;
+        margin-bottom: 0px;
+        ul.menu {
+            padding: 0px;
+            margin: 0px;
+            .menu-mlid-856,.menu-mlid-857,.menu-mlid-858,.menu-mlid-859,.menu-mlid-964{
+                list-style-type: none;
+                list-style-image: none;
+                display: inline-block;
+                margin-right: 5px;
+                padding-left: 8px;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    // color: transparent;
+                    &:before {
+                        content: "►";
+                        padding-right: 5px;
+                    }
+                    &:hover {
+                        // text-decoration: underline;
+                    }
+                }
+                &:before {
+                    // content: ' ';
+                    // display: block;
+                    // width: 0;
+                    // height: 0;
+                    // border-style: solid;
+                    // border-width: 2.5px 0 2.5px 5px;
+                    // border-color: transparent transparent transparent transparent;
+                    // position: absolute;
+                    // left: 0px;
+                    // top: 50%;
+                    // margin-top: -2.5px;
+                }
+            }
+            #facebook {
+                margin-left: 5px;
+                font-size: 16px;
+                padding-left: 0px;
+                width: 10px;
+                overflow: hidden;
+                position: relative;
+                bottom: -5px;
+                display: inline-block;
+                a {
+                    color: #3b5998;
+                    text-decoration: none;
+                    transition: all 0.6s ease;
+                    -o-transition: all 0.6s ease;
+                    -webkit-transition: all 0.6s ease;
+                    -moz-transition: all 0.6s ease;
+                    &:hover {
+                        text-decoration: none;
+                        color: #8b9dc3;
+                    }
+                    &:before {
+                        margin-right: 2px;
+                    }
+                }
+                &:before {
+                    display: none;
+                }
+            }
+            #youtube {
+                font-size: 16px;
+                width: 15px;
+                overflow: hidden;
+                padding-left: 0px;
+                position: relative;
+                bottom: -5px;
+                  display: inline-block;
+                a {
+                    color: #bc2424;
+                    text-decoration: none;
+                    transition: all 0.6s ease;
+                    -o-transition: all 0.6s ease;
+                    -webkit-transition: all 0.6s ease;
+                    -moz-transition: all 0.6s ease;
+                    &:hover {
+                        text-decoration: none;
+                        color: #FF4000;
+                    }
+                    &:before {
+                        margin-right: 2px;
+                    }
+                }
+                &:before {
+                    display: none;
+                }
+            }
+            #instagram {
+                font-size: 18px;
+                width: 15px;
+                overflow: hidden;
+                position: relative;
+                padding-left: 0px;
+                bottom: -5px;
+                  display: inline-block;
+                a {
+                    color: #3b5998;
+                    text-decoration: none;
+                    transition: all 0.6s ease;
+                    -o-transition: all 0.6s ease;
+                    -webkit-transition: all 0.6s ease;
+                    -moz-transition: all 0.6s ease;
+                    &:hover {
+                        text-decoration: none;
+                        color: #8b9dc3;
+                    }
+                    &:before {
+                        margin-right: 2px;
+                    }
+                }
+                &:before {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -606,13 +653,16 @@ body.free-article-full-mode #page #content .node-article-area {
         #block-menu-block-2 {
             font-size: 12px;
             margin-bottom: 0px;
-                 width: 40%;
-
-    text-align: right;
-    background-color: #000000;
+            width: 40%;
+            text-align: right;
+            background-color: #000000;
             ul.menu {
                 margin: 0px;
                 padding: 0px;
+                .menu-mlid-653,.menu-mlid-1083,.menu-mlid-654,.menu-mlid-655 {
+                    position: relative;
+                    top: -3px;
+                }
                 li {
                     list-style-type: none;
                     list-style-image: none;
@@ -667,7 +717,6 @@ body.free-article-full-mode #page #content .node-article-area {
                         &:hover {
                             text-decoration: none;
                             // color: #FF4000;instagram
-                            
                         }
                         &:before {
                             margin-right: 2px;
@@ -722,7 +771,7 @@ body.free-article-full-mode #page #content .node-article-area {
     }
     #block-superfish-1,
     #block-superfish-2 {
-    	@extend %clearfix;
+        @extend %clearfix;
         clear: both;
         margin-top: 20px;
         margin-bottom: 0px;
@@ -763,7 +812,7 @@ body.free-article-full-mode #page #content .node-article-area {
                 }
                 ul {
                     background: #000000;
-                  top: 3em;
+                    top: 3em;
                     li.sf-depth-2 {
                         // border-bottom: 1px #ebebeb solid;
                         background: transparent;
@@ -790,7 +839,7 @@ body.free-article-full-mode #page #content .node-article-area {
                 width: 50px;
                 background: url(../images/home.png) no-repeat;
                 background-size: 100% 100%;
-                    border-radius: 50%;
+                border-radius: 50%;
                 a {
                     display: block;
                     width: 100%;
@@ -1573,7 +1622,7 @@ body.free-article-full-mode #page #content .node-article-area {
         color: #000;
         padding-bottom: 30px;
         font-family: "Josefin Sans", sans-serif, "儷黑 Pro", "微軟正黑體" !important;
-        p {
+        p,span {
             font-size: 16px !important;
             line-height: 24px !important;
         }
@@ -2618,15 +2667,16 @@ body.free-article-full-mode #page #content .node-article-area {
         }
     }
 }
-	@include keyframes(triangle_go) {
-  0% {
-    margin-top:20px;
-  }
-  
-  100% {
-     margin-top:0px;
-  } 
+
+@include keyframes(triangle_go) {
+    0% {
+        margin-top: 20px;
+    }
+    100% {
+        margin-top: 0px;
+    }
 }
+
 .triangle {
     @include triangle(25px,
     up,
@@ -2635,17 +2685,18 @@ body.free-article-full-mode #page #content .node-article-area {
     @include centerer();
     @include transition(all 0.2s);
     @include animation(triangle_go 1s);
-   
 }
-#menu-772-1{
-	.triangle {
-		    top: -1.3% !important;
-	}
+
+#menu-772-1 {
+    .triangle {
+        top: -1.3% !important;
+    }
 }
-#menu-780-1{
-	.triangle {
-		    top: -1.5% !important;
-	}
+
+#menu-780-1 {
+    .triangle {
+        top: -1.5% !important;
+    }
 }
 
 //end of region-bottom

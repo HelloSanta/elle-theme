@@ -460,8 +460,8 @@ $zen-column-count:  20;
 
     /*WEDDING Page*/
     .wedding-area{
-      @include zen-grid-item(13,1);
-      $zen-column-count:  13;
+      @include zen-grid-item(14,1);
+      $zen-column-count:  14;
       ul.wedding-list{
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -475,11 +475,11 @@ $zen-column-count:  20;
           display: flex;
           float: left;
           overflow: hidden;
-          width: zen-grid-item-width(6);
+          width: zen-grid-item-width(5);
           margin-right: zen-grid-item-width(0.9);
-          &:nth-child(2n){
-            margin-right:0px;
-          }
+          // &:nth-child(2n){
+          //   margin-right:0px;
+          // }
         }
       }
     }
@@ -520,11 +520,9 @@ $zen-column-count:  20;
           display: flex;
           float: left;
           overflow: hidden;
-          width: zen-grid-item-width(6);
-          margin-right: zen-grid-item-width(0.9);
-          &:nth-child(2n){
-            margin-right:0px;
-          }
+          width: zen-grid-item-width(5);
+          margin-right: zen-grid-item-width(1.5);
+          
         }
       }
     }
@@ -549,23 +547,23 @@ $zen-column-count:  20;
 
     /*ELLE GIRL*/
     .girl-area{
-      @include zen-grid-item(13,1);
-      $zen-column-count:  13;
+      @include zen-grid-item(12,1);
+    
       ul.girl-list{
         li.girl-block{
           .views-field-field-image{
-            @include zen-grid-item(6,1);
+            @include zen-grid-item(7,1);
           }
           .views-field-sharethis{
-            @include zen-grid-item(6,1,right);
+            @include zen-grid-item(12,1,right);
           }
           .views-field-title{
             @include zen-clear(right);
-            @include zen-grid-item(6,1,right);
+            @include zen-grid-item(12,1,right);
           }
           .views-field-body,.views-field-nid{
             @include zen-clear(right);
-            @include zen-grid-item(6,1,right); 
+            @include zen-grid-item(12,1,right); 
           }
         }
       }
