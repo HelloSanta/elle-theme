@@ -1622,9 +1622,10 @@ body.free-article-full-mode #page #content .node-article-area {
         color: #000;
         padding-bottom: 30px;
         font-family: "Josefin Sans", sans-serif, "儷黑 Pro", "微軟正黑體" !important;
-        p,span {
+        p,span,a {
             font-size: 16px !important;
             line-height: 24px !important;
+            font-family: "Josefin Sans", sans-serif, "儷黑 Pro", "微軟正黑體" !important;
         }
         h5 {
             font-size: 13px !important;
