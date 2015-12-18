@@ -26,13 +26,21 @@ Drupal.behaviors.my_custom_behavior = {
         
       });
 
+jQuery.grep(jQuery(document).find('img'), function(i) {
+    var img = new Image();
+    var src = jQuery(i).attr('src');
+    img.onload = function() {
+        //when done;
+    };
+    img.src = src;
+    return false;
+});
+// var slideshow_1 = $(".view-elle-slideshow img").attr("src");
+// var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
+// var node_slideshow_1 = $(".view-eva-article-slideshow img").attr("src");
 
-var slideshow_1 = $(".view-elle-slideshow img").attr("src");
-var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
-var node_slideshow_1 = $(".view view-eva-article-slideshow img").attr("src");
 
-
-$.preload( 'slideshow','slideshow_2','node_slideshow_1');
+//$.preload( '/sites/default/files/styles/__slick____/public/new-dossier/_1_163.jpg','/sites/default/files/styles/__slick____/public/new-dossier/_1_162.jpg','/sites/default/files/styles/__slick____/public/new-dossier/_1_161.jpg');
 
       $('.column-area ul.editor-list li.views-row-6.editor-block').after('<li id="ad-destination"></li>');
       $('#block-views-ad-block-block-23').appendTo('#ad-destination');
