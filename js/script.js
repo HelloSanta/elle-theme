@@ -26,6 +26,14 @@ Drupal.behaviors.my_custom_behavior = {
         
       });
 
+
+var slideshow_1 = $(".view-elle-slideshow img").attr("src");
+var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
+var node_slideshow_1 = $(".view view-eva-article-slideshow img").attr("src");
+
+
+$.preload( 'slideshow','slideshow_2','node_slideshow_1');
+
       $('.column-area ul.editor-list li.views-row-6.editor-block').after('<li id="ad-destination"></li>');
       $('#block-views-ad-block-block-23').appendTo('#ad-destination');
 
