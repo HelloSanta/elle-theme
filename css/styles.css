@@ -2247,9 +2247,9 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
     display: none;
   }
 }
-@media all and (min-width: 768px) and (max-width: 960px) {
+@media all and (min-width: 768px) and (max-width: 1000px) {
   /* line 1130, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
     display: none;
   }
 
@@ -2276,7 +2276,7 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
 }
 @media all and (min-width: 480px) and (max-width: 767px) {
   /* line 1162, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
     display: none;
   }
 
@@ -2594,7 +2594,7 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
 }
 @media all and (max-width: 479px) {
   /* line 1389, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
     display: none;
   }
 
