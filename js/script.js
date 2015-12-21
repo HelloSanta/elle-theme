@@ -35,6 +35,7 @@ jQuery.grep(jQuery(document).find('img'), function(i) {
     img.src = src;
     return false;
 });
+//載入圖片讓它快取
 
 var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
 var node_slideshow_1 = $(".view-eva-article-slideshow img").attr("src");
