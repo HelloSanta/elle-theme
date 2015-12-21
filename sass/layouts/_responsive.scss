@@ -1056,7 +1056,13 @@ $zen-column-count:  20;
   }
 }
 
-
+// @media all and (max-width: 1000px){
+//  #page{
+//     #header{
+//         display: none;
+//     }
+// }
+// }
 @media all and (min-width: 1000px){
    body.elle-girl{
   #header-top{display: none;}
@@ -1073,6 +1079,7 @@ $zen-column-count:  20;
       }
     }
   }
+
   #header-top{
 
     #block-views-ad-block-block{
