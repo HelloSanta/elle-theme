@@ -35,12 +35,14 @@ jQuery.grep(jQuery(document).find('img'), function(i) {
     img.src = src;
     return false;
 });
-// var slideshow_1 = $(".view-elle-slideshow img").attr("src");
-// var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
-// var node_slideshow_1 = $(".view-eva-article-slideshow img").attr("src");
 
+var slideshow_2 = $(".views-field-field-slideshow img").attr("src");
+var node_slideshow_1 = $(".view-eva-article-slideshow img").attr("src");
+var slideshow_1 = $(".view-elle-slideshow img").attr("src")
 
-//$.preload( '/sites/default/files/styles/__slick____/public/new-dossier/_1_163.jpg','/sites/default/files/styles/__slick____/public/new-dossier/_1_162.jpg','/sites/default/files/styles/__slick____/public/new-dossier/_1_161.jpg');
+var slideshow = [slideshow_1,slideshow_2,node_slideshow_1];
+
+$.preload(slideshow[0],slideshow[1],slideshow[2]);
 
       $('.column-area ul.editor-list li.views-row-6.editor-block').after('<li id="ad-destination"></li>');
       $('#block-views-ad-block-block-23').appendTo('#ad-destination');
