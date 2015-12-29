@@ -2687,7 +2687,9 @@ body.free-article-full-mode #page #content .node-article-area {
     display: block;
     @include centerer();
     @include transition(all 0.2s);
-    @include animation(triangle_go 1s);
+    -webkit-animation: triangle_go 1s; 
+    animation: triangle_go 1s; 
+    // @include animation(triangle_go 1s);
 }
 
 #menu-772-1 {
@@ -2701,5 +2703,18 @@ body.free-article-full-mode #page #content .node-article-area {
         top: -1.5% !important;
     }
 }
+
+    #superfish-2{
+        #menu-959-2{
+            .sf-hidden{
+                    left: -5.5em!important;
+
+                    }
+                    &:hover ul{
+                        left: -5.5em!important; 
+            }
+        }
+    }
+
 
 //end of region-bottom

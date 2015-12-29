@@ -7049,17 +7049,25 @@ body.free-article-full-mode #page #content .node-article-area {
   -o-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  -moz-animation: triangle_go 1s;
   -webkit-animation: triangle_go 1s;
   animation: triangle_go 1s;
 }
 
-/* line 2694, ../sass/styles.scss */
+/* line 2696, ../sass/styles.scss */
 #menu-772-1 .triangle {
   top: -1.3% !important;
 }
 
-/* line 2700, ../sass/styles.scss */
+/* line 2702, ../sass/styles.scss */
 #menu-780-1 .triangle {
   top: -1.5% !important;
+}
+
+/* line 2709, ../sass/styles.scss */
+#superfish-2 #menu-959-2 .sf-hidden {
+  left: -5.5em !important;
+}
+/* line 2713, ../sass/styles.scss */
+#superfish-2 #menu-959-2:hover ul {
+  left: -5.5em !important;
 }

@@ -23,6 +23,7 @@ Drupal.behaviors.my_custom_behavior = {
         $('#block-superfish-2 ul#superfish-2').css('overflow','visible');
         
         $( "#superfish-1 ul" ).prepend( "<div class='triangle'></div>" );
+        $( "#superfish-2 ul" ).prepend( "<div class='triangle'></div>" );
         $('.region-header-top #block-menu-block-2').innerHeight($('.region-header-top #block-menu-block-1').innerHeight());
         
       });
