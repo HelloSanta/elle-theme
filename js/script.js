@@ -24,8 +24,8 @@ Drupal.behaviors.my_custom_behavior = {
         
         $( "#superfish-1 ul" ).prepend( "<div class='triangle'></div>" );
         $( "#superfish-2 ul" ).prepend( "<div class='triangle'></div>" );
-        $('.region-header-top #block-menu-block-2').innerHeight($('.region-header-top #block-menu-block-1').innerHeight());
-        
+        // $('.region-header-top #block-menu-block-2').innerHeight($('.region-header-top #block-menu-block-1').innerHeight());
+        $( ".region-header-top #block-menu-block-2,.region-header-top #block-menu-block-1" ).wrapAll( "<div class='menu_block_wrap' />");
       });
 
 jQuery.grep(jQuery(document).find('img'), function(i) {

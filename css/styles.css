@@ -10,19 +10,19 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 /* line 41, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1, #header #block-superfish-1,
-#header #block-superfish-2 {
+#header #block-superfish-2, .menu_block_wrap {
   *zoom: 1;
 }
 /* line 43, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1:before, #header #block-superfish-1:before,
-#header #block-superfish-2:before, body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after {
+#header #block-superfish-2:before, .menu_block_wrap:before, body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
+#header #block-superfish-2:after, .menu_block_wrap:after {
   content: " ";
   display: table;
 }
 /* line 48, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after {
+#header #block-superfish-2:after, .menu_block_wrap:after {
   clear: both;
 }
 
@@ -598,19 +598,19 @@ table {
 
 /* line 41, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1, #header #block-superfish-1,
-#header #block-superfish-2 {
+#header #block-superfish-2, .menu_block_wrap {
   *zoom: 1;
 }
 /* line 43, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1:before, #header #block-superfish-1:before,
-#header #block-superfish-2:before, body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after {
+#header #block-superfish-2:before, .menu_block_wrap:before, body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
+#header #block-superfish-2:after, .menu_block_wrap:after {
   content: " ";
   display: table;
 }
 /* line 48, ../sass/_mixins.scss */
 body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after {
+#header #block-superfish-2:after, .menu_block_wrap:after {
   clear: both;
 }
 
@@ -7070,4 +7070,10 @@ body.free-article-full-mode #page #content .node-article-area {
 /* line 2713, ../sass/styles.scss */
 #superfish-2 #menu-959-2:hover ul {
   left: -5.5em !important;
+}
+
+/* line 2719, ../sass/styles.scss */
+.menu_block_wrap {
+  background-color: #000000;
+  clear: both;
 }

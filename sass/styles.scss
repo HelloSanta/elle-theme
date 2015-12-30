@@ -2715,6 +2715,12 @@ body.free-article-full-mode #page #content .node-article-area {
             }
         }
     }
+   
+    .menu_block_wrap{
+        background-color: #000000;
+        @extend %clearfix;
+        clear: both;
+    }
 
 
 //end of region-bottom
