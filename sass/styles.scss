@@ -380,7 +380,7 @@ body.free-article-full-mode #page #content .node-article-area {
     	font-size: 12px;
         margin-bottom: 0px;
         width: 60%;
-        background: #000000;
+        // background: #000000;
         padding-top: 6px;
         padding-bottom: 3px;
          ul.menu {
@@ -655,11 +655,11 @@ body.free-article-full-mode #page #content .node-article-area {
             margin-bottom: 0px;
             width: 40%;
             text-align: right;
-            background-color: #000000;
+            // background-color: #000000;
             ul.menu {
                 margin: 0px;
                 padding: 0px;
-                .menu-mlid-653,.menu-mlid-1083,.menu-mlid-654,.menu-mlid-655 {
+                .menu__item {
                     position: relative;
                     top: -3px;
                 }
@@ -684,7 +684,8 @@ body.free-article-full-mode #page #content .node-article-area {
                     width: 10px;
                     overflow: hidden;
                     position: relative;
-                    bottom: -5px;
+                       top: 6px !important;
+                           right: 7px;
                     a {
                         // color: #3b5998;
                         text-decoration: none;
@@ -706,7 +707,7 @@ body.free-article-full-mode #page #content .node-article-area {
                     width: 15px;
                     overflow: hidden;
                     position: relative;
-                    bottom: -5px;
+                     top: 6px !important;
                     a {
                         // color: #bc2424;
                         text-decoration: none;
@@ -728,7 +729,7 @@ body.free-article-full-mode #page #content .node-article-area {
                     width: 15px;
                     overflow: hidden;
                     position: relative;
-                    bottom: -5px;
+                        top: 6px !important;
                     a {
                         // color: #3b5998;
                         text-decoration: none;
