@@ -596,24 +596,6 @@ table {
   margin-bottom: 1.5em;
 }
 
-/* line 41, ../sass/_mixins.scss */
-body.elle-girl #header .region-header #block-superfish-1, #header #block-superfish-1,
-#header #block-superfish-2, .menu_block_wrap {
-  *zoom: 1;
-}
-/* line 43, ../sass/_mixins.scss */
-body.elle-girl #header .region-header #block-superfish-1:before, #header #block-superfish-1:before,
-#header #block-superfish-2:before, .menu_block_wrap:before, body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after, .menu_block_wrap:after {
-  content: " ";
-  display: table;
-}
-/* line 48, ../sass/_mixins.scss */
-body.elle-girl #header .region-header #block-superfish-1:after, #header #block-superfish-1:after,
-#header #block-superfish-2:after, .menu_block_wrap:after {
-  clear: both;
-}
-
 /* Layout rules */
 /**
  * @file
@@ -2249,7 +2231,7 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
 }
 @media all and (min-width: 768px) and (max-width: 1000px) {
   /* line 1130, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header, body.page-user #header {
     display: none;
   }
 
@@ -2276,7 +2258,7 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
 }
 @media all and (min-width: 480px) and (max-width: 767px) {
   /* line 1162, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header, body.page-user #header {
     display: none;
   }
 
@@ -2594,7 +2576,7 @@ body.elle-girl #header .region-header #block-superfish-1:after, #header #block-s
 }
 @media all and (max-width: 479px) {
   /* line 1389, ../sass/layouts/_responsive.scss */
-  body.page-node.front #header, body.node-type-article #header, body.page-node #header {
+  body.page-node.front #header, body.node-type-article #header, body.page-node #header, body.page-user #header {
     display: none;
   }
 
@@ -4477,7 +4459,6 @@ body.free-article-full-mode #page #content .node-article-area {
   overflow: hidden;
   position: relative;
   top: 6px !important;
-  right: 7px;
 }
 /* line 689, ../sass/styles.scss */
 #header-top .region-header-top #block-menu-block-2 ul.menu #facebook a {
